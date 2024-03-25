@@ -14,7 +14,7 @@ function Logo(props: {isOpenedNavbar: boolean} ) {
           className={`flex transition-transform duration-500 ease-in-out ${isOpenedNavbar && "-translate-x-[68px]"} group-hover:-translate-x-[68px] motion-reduce:transform-none`}
         >
           <span className="px-1">Code by </span>
-          <span className="transition-transform duration-1000 group-hover:text-stone-500 motion-reduce:transform-none">
+          <span className="transition-transform duration-500 group-hover:text-gray-500 motion-reduce:transform-none">
             Lucas Garcia
           </span>
         </div>

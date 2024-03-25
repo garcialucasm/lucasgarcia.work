@@ -1,19 +1,38 @@
 import { PiMapPin } from "react-icons/pi"
 
 import AnimatedText from "./modules/AnimatedText"
+import Link from "next/link"
+import { NavigationPaths } from "@/types/navigationPaths"
 
 function HeroSection() {
   return (
     <>
       <div className="flex h-screen flex-col items-center justify-center">
-        <div className="text-4xl sm:text-6xl font-extrabold text-center px-8">
+        <div className="px-8 text-center text-4xl font-extrabold sm:text-6xl min-h-20">
           <AnimatedText />
         </div>
-        <div className="relative top-8 flex text-2xl items-center">
-          <PiMapPin /> 
-          <span className="text-base font-semibold">Porto, PT</span>
+        <div className="relative top-8 flex items-center text-2xl">
+          <span className="px-1">
+            <PiMapPin />{" "}
+          </span>
+          <span className="text-base font-semibold">
+            Currently near Aveiro and Porto, Portugal
+          </span>
         </div>
-          <div className="relative top-16 text-sm flex items-center">Discover more&nbsp;<span className="transition-transform duration-1000 hover:text-stone-500 underline underline-offset-4 motion-reduce:transform-none">about me.</span></div>
+        <div className="relative top-16 flex items-start text-sm">
+          <span className="">Discover more</span>
+          <Link href={NavigationPaths.work}>
+            <span className="border-b-4 border-gray-300 mx-1 transition-all duration-200 hover:bg-gray-300 transform">
+              about work
+            </span>
+          </Link>
+          and
+          <Link href={NavigationPaths.about}>
+            <span className="border-b-4 border-gray-300 mx-1 transition-all duration-200 hover:bg-gray-300 transform">
+              about me
+            </span>
+          </Link>
+        </div>
       </div>
     </>
   )

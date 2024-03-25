@@ -73,10 +73,10 @@ function Navbar() {
     <>
       <nav id="nav" className="z-50 w-full" role="navigation">
         <div
-          className={`${isOpenedNavbar && screenSize < 768 && "fixed h-screen w-screen overflow-auto bg-stone-200 bg-opacity-50 backdrop-blur"}`}
+          className={`${isOpenedNavbar && screenSize < 768 && "fixed h-screen w-screen overflow-auto bg-gray-100 bg-opacity-50 backdrop-blur"}`}
         ></div>
         <div
-          className={`md:flex-no-wrap fixed mx-auto flex w-full flex-wrap items-center p-8 transition duration-1000 ${isScrolling && "bg-gray-100 bg-opacity-50 shadow-xl backdrop-blur"}`}
+          className={`md:flex-no-wrap fixed mx-auto flex w-full flex-wrap items-center p-8 transition duration-500 ${isScrolling && "bg-gray-50 bg-opacity-70 shadow-xl backdrop-blur"}`}
         >
           <div className="mr-4 md:mr-8">
             <Link href={NavigationPaths.home} rel="home">
@@ -107,31 +107,31 @@ function Navbar() {
           >
             <ul
               id="ulMenu"
-              className="my-8 flex transform flex-col items-center justify-center rounded-xl bg-white py-4 text-center md:mx-0 md:my-0 md:ml-auto md:flex-row md:items-center md:border-0 md:bg-transparent md:py-0"
+              className="my-12 flex transform flex-col px-4 items-center justify-center rounded-xl bg-white py-4 text-center shadow-xl md:mx-0 md:my-0 md:ml-auto md:flex-row md:items-center md:border-0 md:bg-transparent md:p-0 md:shadow-none"
             >
               <Link
-                className={`${pathname == NavigationPaths.home && "text-stone-500"} block w-full px-4 py-1 font-semibold hover:bg-stone-50 hover:text-stone-400 md:p-4`}
+                className={`${pathname == NavigationPaths.home && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
                 href={NavigationPaths.home}
                 title="Home"
               >
                 <li>Home</li>
               </Link>
               <Link
-                className={`${pathname == NavigationPaths.work && "text-stone-500"} block w-full px-4 py-1 font-semibold hover:bg-stone-50 hover:text-stone-400 md:p-4`}
+                className={`${pathname == NavigationPaths.work && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
                 href={NavigationPaths.work}
                 title="Work"
               >
                 <li>Work</li>
               </Link>
               <Link
-                className={`${pathname == NavigationPaths.about && "text-stone-500"} block w-full px-4 py-1 font-semibold hover:bg-stone-50 hover:text-stone-400 md:p-4`}
+                className={`${pathname == NavigationPaths.about && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
                 href={NavigationPaths.about}
                 title="About"
               >
                 <li>About</li>
               </Link>
               <Link
-                className={`${pathname == NavigationPaths.contact && "text-stone-500"} block w-full px-4 py-1 font-semibold hover:bg-stone-50 hover:text-stone-400 md:p-4`}
+                className={`${pathname == NavigationPaths.contact && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
                 href={NavigationPaths.contact}
                 title="Contact"
               >
