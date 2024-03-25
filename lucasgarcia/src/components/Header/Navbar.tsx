@@ -13,7 +13,7 @@ function Navbar() {
   const [isOpenedNavbar, setIsOpenedNavbar] = useState(false)
   const navbarMenuRef = useRef(null)
   const pathname = usePathname()
-  const [screenSize, setScreenSize] = useState(window.innerWidth)
+  const [screenSize, setScreenSize] = useState(0)
   const [isScrolling, setIsScrolling] = useState(false)
 
   function toggleMenuNavbar() {
