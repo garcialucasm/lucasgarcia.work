@@ -32,7 +32,7 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
   return (
     <>
       <div className="flex items-center justify-center p-8">
-        <div className="flex w-fit rounded-full border bg-gradient-to-b from-gray-100 to-gray-200 p-2 shadow-2xl">
+        <div className="flex w-fit rounded-full border bg-gradient-to-b from-gray-100 to-gray-200 p-2 drop-shadow-xl">
           <SliderToggle
             selected={selected}
             setSelected={setSelected}
@@ -61,9 +61,9 @@ const SliderToggle: React.FC<SliderToggleProps> = ({
   optionB,
 }) => {
   return (
-    <div className="relative flex w-fit items-center text-slate-600">
+    <div className="relative flex w-fit items-center text-gray-600">
       <button
-        className={`${TOGGLE_CLASSES} ${selected === optionA && "text-slate-800"}`}
+        className={`${TOGGLE_CLASSES} ${selected === optionA && "text-blue-800"}`}
         onClick={() => {
           setSelected(optionA)
         }}
@@ -76,7 +76,7 @@ const SliderToggle: React.FC<SliderToggleProps> = ({
         </div>
       </button>
       <button
-        className={`${TOGGLE_CLASSES} ${selected === optionB && "text-slate-800"}`}
+        className={`${TOGGLE_CLASSES} ${selected === optionB && "text-blue-800"}`}
         onClick={() => {
           setSelected(optionB)
         }}

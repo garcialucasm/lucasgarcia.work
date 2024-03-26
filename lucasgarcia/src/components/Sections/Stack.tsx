@@ -1,7 +1,7 @@
 import { ToggleButton } from "../Buttons/ToggleButton"
 import TitleLabel from "../Others/TitleLabel"
-import BackendStack from "./BackendStack"
-import FrontendStack from "./FrontendStack"
+import BackendStack from "../Stack/BackendStack"
+import FrontendStack from "../Stack/FrontendStack"
 
 function Stack() {
   return (

@@ -2,7 +2,7 @@ import ContainerMain from "@/components/Containers/ContainerMain"
 import Footer from "@/components/Footer/Footer"
 import Navbar from "@/components/Header/Navbar"
 import HeroSection from "@/components/Hero/HeroSection"
-import Stack from "@/components/Stack/Stack"
+import Stack from "@/components/Sections/Stack"
 import Projects from "@/components/Work/Projects"
 
 export default function Home() {
