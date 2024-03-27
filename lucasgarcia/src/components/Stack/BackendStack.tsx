@@ -7,6 +7,7 @@ import { SiJavascript, SiMocha } from "react-icons/si"
 import { SiTypescript } from "react-icons/si"
 import { FaGithub, FaPython } from "react-icons/fa"
 import CardStack from "./CardStack"
+import { BiLogoPostgresql } from "react-icons/bi"
 
 export default function BackendStack() {
   return (
@@ -36,6 +37,11 @@ export default function BackendStack() {
       <CardStack stackName="MySQL">
         <span className="text-xl group-hover:text-indigo-500 transition-all group-hover:scale-150">
           <HiDatabase size={42} />
+        </span>
+      </CardStack>
+      <CardStack stackName="PostgreSQL">
+        <span className="text-xl group-hover:text-sky-600 transition-all group-hover:scale-150">
+          <BiLogoPostgresql size={42} />
         </span>
       </CardStack>
       <CardStack stackName="REST Api">

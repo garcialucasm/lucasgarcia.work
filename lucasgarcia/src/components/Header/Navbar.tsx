@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { PiListBold, PiXBold } from "react-icons/pi"
 
-import { NavigationPaths } from "@/types/navigationPaths"
+import { NavigationPaths } from "@/types/NavigationPaths"
 import Logo from "./modules/Logo"
 import Button from "../Buttons/Button"
 

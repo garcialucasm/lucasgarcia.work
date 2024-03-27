@@ -12,12 +12,12 @@ import { TiZoom } from "react-icons/ti"
 export default function FrontendStack() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-8 font-semibold">
-      <CardStack stackName="HTML">
+      <CardStack stackName="HTML5">
         <span className="text-xl transition-all group-hover:scale-150 group-hover:text-orange-500">
           <FaHtml5 size={42} />
         </span>
       </CardStack>
-      <CardStack stackName="CSS">
+      <CardStack stackName="CSS3">
         <span className="text-xl transition-all group-hover:scale-150 group-hover:text-sky-500">
           <FaCss3Alt size={42} />
         </span>

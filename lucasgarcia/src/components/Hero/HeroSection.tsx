@@ -2,7 +2,7 @@ import { PiMapPin } from "react-icons/pi"
 
 import AnimatedText from "./modules/AnimatedText"
 import Link from "next/link"
-import { NavigationPaths } from "@/types/navigationPaths"
+import { NavigationPaths } from "@/types/NavigationPaths"
 
 function HeroSection() {
   return (
