@@ -80,7 +80,7 @@ function Navbar() {
           className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between p-8 transition duration-500 ${(isScrolling || isOpenedNavbar) && "bg-slate-50 bg-opacity-70 shadow-xl backdrop-blur"}`}
         >
           <div className="mr-4 flex xl:mr-8">
-            <Link href={NavigationPaths.home} rel="home">
+            <Link href={NavigationPaths.home} title="Home">
               <Logo isOpenedNavbar={isOpenedNavbar} />
             </Link>
           </div>
