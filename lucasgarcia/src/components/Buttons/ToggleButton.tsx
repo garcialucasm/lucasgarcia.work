@@ -8,12 +8,8 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
   optionB,
 }) => {
   return (
-    <>
-      <div className="flex items-center justify-center p-8">
-        <div className="flex w-fit rounded-full border border-gray-300 bg-white p-2 shadow-inner">
-          <SliderToggle optionA={optionA} optionB={optionB} />
-        </div>
+      <div className="flex w-fit rounded-full border border-slate-300 bg-white p-2 shadow-xl md:shadow-none">
+        <SliderToggle optionA={optionA} optionB={optionB} />
       </div>
-    </>
   )
 }

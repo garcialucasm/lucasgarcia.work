@@ -1,3 +1,5 @@
+"use client"
+
 import { FaReact } from "react-icons/fa"
 import { PiGearBold } from "react-icons/pi"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
@@ -5,7 +7,7 @@ import { ToggleButtonProps } from "@/types/ToggleButtons"
 import { motion } from "framer-motion"
 
 const TOGGLE_CLASSES =
-  "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10"
+  "text-sm font-medium flex items-center gap-2 px-3 xl:pl-3 xl:pr-3.5 py-0 xl:py-1.5 transition-colors relative z-10"
 
 export const SliderToggle: React.FC<ToggleButtonProps> = ({
   optionA,
@@ -13,18 +15,18 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
 }) => {
   const { selected, settingToggleBackFront } = useToggleBackFrontContext()
   return (
-    <div className="relative flex w-fit items-center text-gray-500">
+    <div className="relative flex w-fit items-center text-slate-500 hover:text-slate-700">
       <button
         className={`${TOGGLE_CLASSES} ${selected === optionA && "text-blue-700"}`}
         onClick={() => {
           settingToggleBackFront(optionA)
         }}
       >
-        <div className="flex items-center gap-x-2 p-4 text-lg font-bold">
+        <div className="flex items-center gap-x-2 p-2 font-bold">
           <FaReact
             className={`${selected === optionA && "animate-spin-slow"} relative z-10 text-xl`}
           />
-          <span className="relative z-10">{optionA}</span>
+          <span className={`relative z-10`}>{optionA}</span>
         </div>
       </button>
       <button
@@ -33,11 +35,11 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
           settingToggleBackFront(optionB)
         }}
       >
-        <div className="flex items-center gap-x-2 p-4 text-lg font-bold">
+        <div className="flex items-center gap-x-2 p-2 font-bold">
           <PiGearBold
             className={`${selected === optionB && "animate-spin-slow"} relative z-10 text-xl`}
           />
-          <span className="relative z-10">{optionB}</span>
+          <span className={`relative z-10`}>{optionB}</span>
         </div>
       </button>
       <div
@@ -53,7 +55,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
             stiffness: 250,
             duration: 0.2,
           }}
-          className={`h-full w-1/2 rounded-full border border-gray-200 bg-gradient-to-t from-gray-100 to-gray-200 drop-shadow`}
+          className={`h-full w-1/2 rounded-full border border-blue-500 bg-gradient-to-b from-slate-50 to-slate-200 shadow-blue-500 shadow-center-sm`}
         />
       </div>
     </div>

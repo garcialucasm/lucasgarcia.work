@@ -2,8 +2,8 @@ import ContainerMain from "@/components/Containers/ContainerMain"
 import Footer from "@/components/Footer/Footer"
 import Navbar from "@/components/Header/Navbar"
 import HeroSection from "@/components/Hero/HeroSection"
-import Stack from "@/components/Sections/Stack"
-import Projects from "@/components/Work/Projects"
+import Stack from "@/components/SectionsHome/Stack"
+import SelectedCases from "@/components/SectionsHome/SelectedCases"
 
 export default function Home() {
   return (
@@ -13,8 +13,8 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <HeroSection />
         </div>
-        <Projects />
         <Stack />
+        <SelectedCases />
       </ContainerMain>
       <Footer />
     </main>

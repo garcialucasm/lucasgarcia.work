@@ -1,11 +1,12 @@
 import { BsBracesAsterisk } from "react-icons/bs"
 
-function Logo(props: {isOpenedNavbar: boolean} ) {
+function Logo(props: { isOpenedNavbar: boolean }) {
   const isOpenedNavbar = props.isOpenedNavbar
+
   return (
     <div className="group flex items-center text-[16px] font-semibold">
       <span
-        className={`text-[24px] transition-transform duration-500 ${isOpenedNavbar && "-rotate-[360deg]"} group-hover:-rotate-[360deg] motion-reduce:transform-none`}
+        className={`text-[24px] transition-transform duration-500 ${isOpenedNavbar && "rotate-[360deg]"} text-slate-600 group-hover:-rotate-[360deg] motion-reduce:transform-none`}
       >
         <BsBracesAsterisk />
       </span>
@@ -14,7 +15,7 @@ function Logo(props: {isOpenedNavbar: boolean} ) {
           className={`flex transition-transform duration-500 ease-in-out ${isOpenedNavbar && "-translate-x-[68px]"} group-hover:-translate-x-[68px] motion-reduce:transform-none`}
         >
           <span className="px-1">Code by </span>
-          <span className="transition-transform duration-500 group-hover:text-gray-500 motion-reduce:transform-none">
+          <span className="transition-transform duration-500 group-hover:text-blue-500 motion-reduce:transform-none">
             Lucas Garcia
           </span>
         </div>

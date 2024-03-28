@@ -9,7 +9,7 @@ function CardStack({
 }) {
   return (
     <div
-      className="group flex h-28 min-w-80 items-center justify-start gap-x-8 rounded-xl bg-white px-16 py-8 transition-all hover:scale-110 hover:shadow-2xl"
+      className="group flex h-24 items-center justify-center gap-x-8 rounded-2xl bg-white transition-all hover:scale-110 hover:shadow-center-xl shadow-orange-400"
       title={stackName}
     >
       {children}

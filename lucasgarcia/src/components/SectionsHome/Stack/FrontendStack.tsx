@@ -4,14 +4,21 @@ import { GiGears } from "react-icons/gi"
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si"
 import { SiTypescript } from "react-icons/si"
 import CardStack from "./CardStack"
-import { FaCss3Alt, FaGithub, FaHtml5, FaReact, FaWordpress } from "react-icons/fa"
+import {
+  FaCss3Alt,
+  FaGithub,
+  FaHtml5,
+  FaReact,
+  FaWordpress,
+} from "react-icons/fa"
 import { BsBootstrap } from "react-icons/bs"
 import { DiJavascript } from "react-icons/di"
 import { TiZoom } from "react-icons/ti"
+import ContainerStack from "../../Containers/ContainerStack"
 
 export default function FrontendStack() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-8 font-semibold">
+    <ContainerStack>
       <CardStack stackName="HTML5">
         <span className="text-xl transition-all group-hover:scale-150 group-hover:text-orange-500">
           <FaHtml5 size={42} />
@@ -49,14 +56,14 @@ export default function FrontendStack() {
           <GiGears size={38} />
         </span>
       </CardStack>
-      <CardStack stackName="Bootstrap CSS">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-purple-700">
-          <BsBootstrap size={42} />
-        </span>
-      </CardStack>
-      <CardStack stackName="Tailwind CSS">
+      <CardStack stackName="Tailwind">
         <span className="text-xl transition-all group-hover:scale-150 group-hover:text-sky-500">
           <SiTailwindcss size={42} />
+        </span>
+      </CardStack>
+      <CardStack stackName="Bootstrap">
+        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-purple-700">
+          <BsBootstrap size={42} />
         </span>
       </CardStack>
       <CardStack stackName="SEO">
@@ -74,6 +81,6 @@ export default function FrontendStack() {
           <FaGithub size={42} />
         </span>
       </CardStack>
-    </div>
+    </ContainerStack>
   )
 }

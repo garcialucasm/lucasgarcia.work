@@ -8,6 +8,7 @@ import { PiListBold, PiXBold } from "react-icons/pi"
 import { NavigationPaths } from "@/types/NavigationPaths"
 import Logo from "./modules/Logo"
 import Button from "../Buttons/Button"
+import ToggleBackFront from "../Buttons/ToggleBackFront"
 
 function Navbar() {
   const [isOpenedNavbar, setIsOpenedNavbar] = useState(false)
@@ -71,22 +72,22 @@ function Navbar() {
 
   return (
     <>
-      <nav id="nav" className="z-50 w-full" role="navigation">
+      <nav id="nav" className="z-40 w-full" role="navigation">
         <div
-          className={`${isOpenedNavbar && screenSize < 768 && "fixed h-screen w-screen overflow-auto bg-gray-100 bg-opacity-50 backdrop-blur"}`}
+          className={`${isOpenedNavbar && screenSize < 1280 && "fixed h-screen w-screen overflow-auto bg-slate-100 bg-opacity-50 backdrop-blur"}`}
         ></div>
         <div
-          className={`md:flex-no-wrap fixed mx-auto flex w-full flex-wrap items-center p-8 transition duration-500 ${isScrolling && "bg-gray-50 bg-opacity-70 shadow-xl backdrop-blur"}`}
+          className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between p-8 transition duration-500 ${(isScrolling || isOpenedNavbar) && "bg-slate-50 bg-opacity-70 shadow-xl backdrop-blur"}`}
         >
-          <div className="mr-4 md:mr-8">
+          <div className="mr-4 flex xl:mr-8">
             <Link href={NavigationPaths.home} rel="home">
               <Logo isOpenedNavbar={isOpenedNavbar} />
             </Link>
           </div>
-          <div className="ml-auto md:hidden">
+          <div className="flex items-center xl:hidden">
             <Button
               onClick={toggleMenuNavbar}
-              className={`absolute right-8 top-8 transition duration-300 ${isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
+              className={`absolute right-8 transition duration-300 ${isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
             >
               <PiListBold size={28}>
                 <title>Menu</title>
@@ -94,7 +95,7 @@ function Navbar() {
             </Button>
             <Button
               onClick={toggleMenuNavbar}
-              className={`absolute right-8 top-8 transition duration-300 ${!isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
+              className={`absolute right-8 transition duration-300 ${!isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
             >
               <PiXBold size={28}>
                 <title>Menu</title>
@@ -103,35 +104,35 @@ function Navbar() {
           </div>
           <div
             id="menu"
-            className={`${isOpenedNavbar ? "origin-top-right scale-100 opacity-100" : "origin-top-right scale-0 opacity-0"} h-0 w-full transition duration-300 md:flex md:w-auto md:flex-grow md:scale-100 md:items-center md:opacity-100 md:transition-none`}
+            className={`${isOpenedNavbar ? "origin-top-right scale-100 opacity-100" : "origin-top-right scale-0 opacity-0"} h-0 w-full transition duration-300 xl:flex xl:w-fit xl:scale-100 xl:items-center xl:opacity-100 xl:transition-none ${screenSize === 1279 && "transition-none"}`}
           >
             <ul
               id="ulMenu"
-              className="my-12 flex transform flex-col px-4 items-center justify-center rounded-xl bg-white py-4 text-center shadow-xl md:mx-0 md:my-0 md:ml-auto md:flex-row md:items-center md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+              className="my-12 flex transform flex-col items-center justify-center rounded-3xl bg-white px-4 py-4 text-center shadow-xl xl:mx-0 xl:my-0 xl:flex-row xl:items-center xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none"
             >
               <Link
-                className={`${pathname == NavigationPaths.home && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
+                className={`${pathname == NavigationPaths.home && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
                 href={NavigationPaths.home}
                 title="Home"
               >
                 <li>Home</li>
               </Link>
               <Link
-                className={`${pathname == NavigationPaths.work && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
-                href={NavigationPaths.work}
-                title="Work"
-              >
-                <li>Work</li>
-              </Link>
-              <Link
-                className={`${pathname == NavigationPaths.about && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
+                className={`${pathname == NavigationPaths.about && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
                 href={NavigationPaths.about}
                 title="About"
               >
                 <li>About</li>
               </Link>
               <Link
-                className={`${pathname == NavigationPaths.contact && "text-gray-500"} block w-full transform rounded-xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-gray-100 motion-reduce:transform-none md:p-4 md:hover:bg-transparent md:hover:text-gray-400`}
+                className={`${pathname == NavigationPaths.work && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
+                href={NavigationPaths.work}
+                title="Work"
+              >
+                <li>Work</li>
+              </Link>
+              <Link
+                className={`${pathname == NavigationPaths.contact && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
                 href={NavigationPaths.contact}
                 title="Contact"
               >
@@ -139,6 +140,11 @@ function Navbar() {
               </Link>
             </ul>
           </div>
+        </div>
+        <div
+          className={`fixed bottom-4 left-1/2 -translate-x-[139.5px] transition-all duration-0 md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "origin-center scale-0 opacity-0"} `}
+        >
+          <ToggleBackFront />
         </div>
       </nav>
     </>
