@@ -8,7 +8,7 @@ import { SiTypescript } from "react-icons/si"
 import { FaGithub, FaPython } from "react-icons/fa"
 import CardStack from "./CardStack"
 import { BiLogoPostgresql } from "react-icons/bi"
-import ContainerStack from "../../Containers/ContainerStack"
+import ContainerStack from "@/components/Containers/ContainerStack"
 
 export default function BackendStack() {
   return (
@@ -21,7 +21,7 @@ export default function BackendStack() {
         </>
       </CardStack>
       <CardStack stackName="TypeScript">
-        <span className="text-xl group-hover:text-blue-500 transition-all group-hover:scale-150">
+        <span className="text-xl group-hover:text-cyan-500 transition-all group-hover:scale-150">
           <SiTypescript size={38} />
         </span>
       </CardStack>
@@ -41,7 +41,7 @@ export default function BackendStack() {
         </span>
       </CardStack>
       <CardStack stackName="PostgreSQL">
-        <span className="text-xl group-hover:text-sky-600 transition-all group-hover:scale-150">
+        <span className="text-xl group-hover:text-cyan-600 transition-all group-hover:scale-150">
           <BiLogoPostgresql size={42} />
         </span>
       </CardStack>
@@ -55,7 +55,7 @@ export default function BackendStack() {
           <SiMocha size={42} />
         </span>
       </CardStack>
-      <CardStack stackName="Express">
+      <CardStack stackName="Express.js">
         <span className="bg-slate-800 px-0.5 py-1 text-xl text-white group-hover:bg-rose-500 transition-all group-hover:scale-150">
           <span className="font-light p-1 text-xl">ex</span>
         </span>

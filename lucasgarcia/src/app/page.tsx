@@ -4,15 +4,15 @@ import Navbar from "@/components/Header/Navbar"
 import HeroSection from "@/components/Hero/HeroSection"
 import Stack from "@/components/SectionsHome/Stack"
 import SelectedCases from "@/components/SectionsHome/SelectedCases"
+import About from "@/components/SectionsHome/About"
 
 export default function Home() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center">
       <Navbar />
+      <HeroSection />
       <ContainerMain>
-        <div className="flex flex-col items-center">
-          <HeroSection />
-        </div>
+        <About />
         <Stack />
         <SelectedCases />
       </ContainerMain>

@@ -7,8 +7,8 @@ import { PiListBold, PiXBold } from "react-icons/pi"
 
 import { NavigationPaths } from "@/types/NavigationPaths"
 import Logo from "./modules/Logo"
-import Button from "../Buttons/Button"
-import ToggleBackFront from "../Buttons/ToggleBackFront"
+import Button from "@/components/Buttons/Button"
+import ToggleBackFront from "@/components/Buttons/ToggleBackFront"
 
 function Navbar() {
   const [isOpenedNavbar, setIsOpenedNavbar] = useState(false)
@@ -111,38 +111,38 @@ function Navbar() {
               className="my-12 flex transform flex-col items-center justify-center rounded-3xl bg-white px-4 py-4 text-center shadow-xl xl:mx-0 xl:my-0 xl:flex-row xl:items-center xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none"
             >
               <Link
-                className={`${pathname == NavigationPaths.home && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
+                className={`${pathname == NavigationPaths.home && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-cyan-600`}
                 href={NavigationPaths.home}
                 title="Home"
               >
                 <li>Home</li>
               </Link>
-              <Link
-                className={`${pathname == NavigationPaths.about && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
+              <a
+                className={`${pathname == NavigationPaths.about && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-cyan-600`}
                 href={NavigationPaths.about}
                 title="About"
               >
                 <li>About</li>
-              </Link>
-              <Link
-                className={`${pathname == NavigationPaths.work && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
+              </a>
+              <a
+                className={`${pathname == NavigationPaths.work && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-cyan-600`}
                 href={NavigationPaths.work}
                 title="Work"
               >
                 <li>Work</li>
-              </Link>
-              <Link
-                className={`${pathname == NavigationPaths.contact && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-slate-400`}
+              </a>
+              <a
+                className={`${pathname == NavigationPaths.contact && "text-slate-500"} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] hover:bg-slate-100 motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-cyan-600`}
                 href={NavigationPaths.contact}
                 title="Contact"
               >
                 <li>Contact</li>
-              </Link>
+              </a>
             </ul>
           </div>
         </div>
         <div
-          className={`fixed bottom-4 left-1/2 -translate-x-[139.5px] transition-all duration-0 md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "origin-center scale-0 opacity-0"} `}
+          className={`fixed bottom-4 left-1/2 origin-center -translate-x-[139.5px] transition-all duration-0 md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}
         >
           <ToggleBackFront />
         </div>
