@@ -43,7 +43,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
         </div>
       </button>
       <div
-        className={`absolute inset-0 z-0 flex ${
+        className={`absolute inset-0 z-0 flex transition-none ${
           selected === optionB ? "justify-end" : "justify-start"
         }`}
       >

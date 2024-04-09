@@ -6,10 +6,23 @@ import { NavigationPaths } from "@/types/NavigationPaths"
 import { HiMiniChevronDoubleDown } from "react-icons/hi2"
 
 function HeroSection() {
+  function handleClick(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    href: string
+  ) {
+    event.preventDefault()
+    const offset = -110 // Adjust this value based on your desired offset
+    const target = document.querySelector(href)
+    if (target) {
+      const y = target.getBoundingClientRect().top + window.scrollY + offset
+      window.scrollTo({ top: y, behavior: "smooth" })
+    }
+  }
+
   return (
     <>
       <div
-        id="hero-section"
+        id="home"
         className="flex h-svh w-full flex-col items-center justify-center shadow-inner"
       >
         <div className="min-h-32 text-pretty px-8 text-center text-4xl font-extrabold sm:text-6xl">
@@ -25,17 +38,27 @@ function HeroSection() {
         </div>
         <div className="relative top-16 flex items-start text-sm">
           <span className="">Discover more</span>
-          <Link href={NavigationPaths.about}>
-            <span className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}>
+          <button
+            title="About"
+            onClick={(event) => handleClick(event, NavigationPaths.about)}
+          >
+            <span
+              className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}
+            >
               about me
             </span>
-          </Link>
+          </button>
           and
-          <Link href={NavigationPaths.work}>
-            <span className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}>
+          <button
+            title="Selected cases"
+            onClick={(event) => handleClick(event, NavigationPaths.cases)}
+          >
+            <span
+              className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}
+            >
               my work
             </span>
-          </Link>
+          </button>
         </div>
       </div>
     </>

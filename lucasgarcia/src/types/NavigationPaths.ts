@@ -1,7 +1,7 @@
 export enum NavigationPaths {
-    home = "/#",
-    about = "/#about",
-    stack = "/#stack",
-    work = "/#work",
-    contact = "/#contact",
+    home = "#home",
+    about = "#about",
+    stack = "#stack",
+    cases = "#cases",
+    contact = "#contact",
 }  

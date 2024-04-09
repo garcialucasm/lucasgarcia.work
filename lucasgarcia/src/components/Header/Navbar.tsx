@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { PiListBold, PiXBold } from "react-icons/pi"
 
 import { NavigationPaths } from "@/types/NavigationPaths"
@@ -16,9 +16,25 @@ function Navbar() {
   const [isOpenedNavbar, setIsOpenedNavbar] = useState(false)
   const navbarMenuRef = useRef(null)
   const pathname = usePathname()
+  const { selected } = useToggleBackFrontContext()
   const [screenSize, setScreenSize] = useState(0)
   const [isScrolling, setIsScrolling] = useState(false)
-  const { selected } = useToggleBackFrontContext()
+
+  function handleClick(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    href: string
+  ) {
+    event.preventDefault()
+    const offset = -110 // Adjust this value based on your desired offset
+    const target = document.querySelector(href)
+    if (target) {
+      const y = target.getBoundingClientRect().top + window.scrollY + offset
+      window.scrollTo({ top: y, behavior: "smooth" })
+    }
+    if (isOpenedNavbar) {
+      setIsOpenedNavbar(!isOpenedNavbar)
+    }
+  }
 
   function toggleMenuNavbar() {
     setIsOpenedNavbar(!isOpenedNavbar)
@@ -83,9 +99,11 @@ function Navbar() {
           className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between p-8 transition duration-300 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-900" : "bg-neutral-200"} bg-opacity-75 shadow-xl backdrop-blur`}`}
         >
           <div className="mr-4 flex xl:mr-8">
-            <Link href={NavigationPaths.home} title="Home">
+            <button
+              onClick={(event) => handleClick(event, NavigationPaths.home)}
+            >
               <Logo isOpenedNavbar={isOpenedNavbar} />
-            </Link>
+            </button>
           </div>
           <div className="flex items-center xl:hidden">
             <Button
@@ -107,45 +125,38 @@ function Navbar() {
           </div>
           <div
             id="menu"
-            className={`${isOpenedNavbar ? "origin-top-right scale-100 opacity-100" : "origin-top-right scale-0 opacity-0"} h-0 w-full transition duration-300 xl:flex xl:w-fit xl:scale-100 xl:items-center xl:opacity-100 xl:transition-none ${screenSize === 1279 && "transition-none"}`}
+            className={`${isOpenedNavbar ? "origin-top-right scale-100 opacity-100" : "origin-top-right scale-0 opacity-0"} h-0 w-full transition xl:flex xl:w-fit xl:scale-100 xl:items-center xl:opacity-100 xl:transition-none ${screenSize === 1279 && "transition-none"}`}
           >
             <ul
               id="ulMenu"
               className={`my-12 flex transform flex-col items-center justify-center rounded-3xl px-4 py-4 text-center shadow-xl xl:mx-0 xl:my-0 xl:flex-row xl:items-center xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none ${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-900" : "bg-white"}`}
             >
-              <Link
-                className={`${pathname == NavigationPaths.home && ""} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
-                href={NavigationPaths.home}
+              <button
+                className={`${pathname == NavigationPaths.home && ""} block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
                 title="Home"
+                onClick={(event) => handleClick(event, NavigationPaths.home)}
               >
                 <li>Home</li>
-              </Link>
-              <a
-                className={`${pathname == NavigationPaths.about && ""} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
-                href={NavigationPaths.about}
+              </button>
+              <button
+                className={`${pathname == NavigationPaths.home && ""} block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
                 title="About"
+                onClick={(event) => handleClick(event, NavigationPaths.about)}
               >
                 <li>About</li>
-              </a>
-              <a
-                className={`${pathname == NavigationPaths.work && ""} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
-                href={NavigationPaths.work}
-                title="Work"
+              </button>
+              <button
+                className={`${pathname == NavigationPaths.home && ""} block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
+                title="Cases"
+                onClick={(event) => handleClick(event, NavigationPaths.cases)} // Pass full URL path here
               >
-                <li>Work</li>
-              </a>
-              <a
-                className={`${pathname == NavigationPaths.contact && ""} block w-full transform rounded-3xl p-4 font-semibold transition-all duration-300 hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
-                href={NavigationPaths.contact}
-                title="Contact"
-              >
-                <li>Contact</li>
-              </a>
+                <li>Cases</li>
+              </button>
             </ul>
           </div>
         </div>
         <div
-          className={`fixed bottom-4 left-1/2 origin-center -translate-x-[139.5px] transition-all duration-0 md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}
+          className={`fixed bottom-4 left-1/2 -translate-x-[139.5px] md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}
         >
           <ToggleBackFront />
         </div>

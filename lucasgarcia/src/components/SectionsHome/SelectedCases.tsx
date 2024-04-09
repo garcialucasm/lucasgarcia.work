@@ -15,7 +15,7 @@ import StackLabel from "@/components/Others/StackLabel"
 function SelectedCases() {
   const { selected } = useToggleBackFrontContext()
   return (
-    <div id="work">
+    <div id="cases">
       <ContainerSections>
         <TitleLabel>Selected Cases</TitleLabel>
         <ContainerSelectedCases>
@@ -65,7 +65,7 @@ function SelectedCases() {
               </div>
             </div>
           </div>
-          <div className="origin-center transition-transform duration-500 lg:group-hover:scale-125">
+          <div className="transition-transform duration-500 lg:group-hover:scale-125">
             <Image
               src="/ipc-bike-mockup.png"
               width={720}
