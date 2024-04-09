@@ -11,9 +11,34 @@ import DescriptionLabel from "@/components/Others/DescriptionLabel"
 import ImageSmall from "@/components/Others/ImageSmall"
 import SubtitleLabel from "@/components/Others/SubtitleLabel"
 import StackLabel from "@/components/Others/StackLabel"
+// import { useEffect, useState } from "react"
+
+// const repoOwner = "garcialucasm"
+// const repoName = "ipc-bike-app"
+let versionIpcBike = "Alpha 0.0.3"
 
 function SelectedCases() {
   const { selected } = useToggleBackFrontContext()
+
+  // const [versionIpcBike, setVersionIpcBike] = useState(null)
+
+  // useEffect(() => {
+  //   const fetchVersion = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`,
+  //         { cache: "no-store" }
+  //       )
+  //       const data = await response.json()
+  //       setVersionIpcBike(data.tag_name)
+  //     } catch (error) {
+  //       console.error("Error fetching latest version of IPC Bike:", error)
+  //     }
+  //   }
+
+  //   fetchVersion()
+  // }, [])
+
   return (
     <div id="cases">
       <ContainerSections>
@@ -39,6 +64,31 @@ function SelectedCases() {
               reservation system.
             </DescriptionLabel>
             <div className="flex flex-col gap-4 text-sm">
+              <div className="text-nowrap font-semibold uppercase">
+                Production Version:{" "}
+                <span className="mx-1 text-nowrap rounded-md bg-amber-100 px-2 py-1 text-xs font-normal text-amber-700">
+                  {versionIpcBike}
+                </span>
+              </div>
+              <div className="text-nowrap font-semibold">
+                LINK:{" "}
+                <a
+                  href="https://ipcbike.vercel.app/"
+                  className="text-nowrapp x-2 mx-1 py-1 font-normal text-blue-500 underline"
+                >
+                  ipcbike.vercel.app
+                </a>
+              </div>
+              <div className="text-nowrap font-semibold">
+                PROJECT OVERVIEW:{" "}
+                <a
+                  href="https://ipcbike.vercel.app/web/project"
+                  target="_blanc"
+                  className="text-nowrapp x-2 mx-1 py-1 font-normal text-blue-500 underline"
+                >
+                  ipcbike.vercel.app/web/project
+                </a>
+              </div>
               <div className="text-nowrap font-semibold uppercase">
                 {selected} Tech Stack:
               </div>
@@ -72,7 +122,7 @@ function SelectedCases() {
               height={496}
               alt="Mockup IPC Bike"
               className={`${selected === ToggleButtonOptions.BACKEND && "hidden"}`}
-              />
+            />
             <Image
               src="/ipc-bike-mockup-backend.png"
               width={720}
