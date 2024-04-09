@@ -132,28 +132,28 @@ function Navbar() {
               className={`my-12 flex transform flex-col items-center justify-center rounded-3xl px-4 py-4 text-center shadow-xl xl:mx-0 xl:my-0 xl:flex-row xl:items-center xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none ${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-900" : "bg-white"}`}
             >
               <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
+                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:underline underline-offset-4 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
                 title="Home"
                 onClick={(event) => handleClick(event, NavigationPaths.home)}
               >
                 <li>Home</li>
               </button>
               <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
+                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:underline underline-offset-4 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
                 title="About"
                 onClick={(event) => handleClick(event, NavigationPaths.about)}
               >
                 <li>About</li>
               </button>
               <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
+                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:underline underline-offset-4 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
                 title="Cases"
                 onClick={(event) => handleClick(event, NavigationPaths.cases)}
               >
                 <li>Cases</li>
               </button>
               <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:text-purple-600 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
+                className={`block w-full transform rounded-3xl p-4 font-semibold transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent xl:hover:underline underline-offset-4 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800" : "hover:bg-neutral-200"}`}
                 title="Contact"
                 onClick={(event) => handleClick(event, NavigationPaths.contact)}
               >

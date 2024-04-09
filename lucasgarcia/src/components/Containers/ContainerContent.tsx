@@ -1,11 +1,14 @@
 interface Props {
   children: React.ReactNode
-  isSingleComponent?: boolean
 }
 
-function ContainerContent({ children, isSingleComponent }: Props) {
+function ContainerContent({ children }: Props) {
   return (
-    <div className={`flex h-full w-full flex-col max-w-screen-xl px-4 2xl:px-0 gap-y-16 -translate-y-12`}>{children}</div>
+    <div
+      className={`flex h-full w-full max-w-screen-xl flex-col gap-y-16 px-4 2xl:px-0`}
+    >
+      {children}
+    </div>
   )
 }
 

@@ -33,7 +33,7 @@ function Contact() {
               <a
                 href={"https://github.com/garcialucasm"}
                 target="_blank"
-                className="border-b-2 border-neutral-700 transition-all duration-300 hover:border-y-2 hover:bg-neutral-700 hover:text-neutral-50"
+                className="border-b-2 border-neutral-700 transition-all duration-300 hover:bg-neutral-700 hover:text-neutral-50"
               >
                 GitHub
               </a>

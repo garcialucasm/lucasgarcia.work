@@ -1,9 +1,7 @@
 import { PiMapPin } from "react-icons/pi"
 
 import AnimatedText from "./modules/AnimatedText"
-import Link from "next/link"
 import { NavigationPaths } from "@/types/NavigationPaths"
-import { HiMiniChevronDoubleDown } from "react-icons/hi2"
 
 function HeroSection() {
   function handleClick(
@@ -60,6 +58,7 @@ function HeroSection() {
             </span>
           </button>
         </div>
+        <div className="relative top-28 opacity-80"></div>
       </div>
     </>
   )

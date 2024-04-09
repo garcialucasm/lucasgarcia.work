@@ -40,13 +40,16 @@ body {
 }
 
 .background-mash-dark {
-  background-color:hsla(263,100%,10%,1);
-  background-image:
-  radial-gradient(at 40% 20%, hsla(289,100%,10%,0.77) 0px, transparent 50%),
-  radial-gradient(at 0% 0%, hsla(189,100%,15%,1) 0px, transparent 50%),
-  radial-gradient(at 0% 50%, hsla(335,100%,20%,1) 0px, transparent 50%),
-  radial-gradient(at 60% 50%, hsla(340,100%,20%,1) 0px, transparent 50%),
-  radial-gradient(at 90% 0%, hsla(22,100%,20%,0.6) 0px, transparent 50%),
-  radial-gradient(at 0% 100%, hsla(240,100%,3%,0.62) 0px, transparent 50%),
-  radial-gradient(at 85% 94%, hsla(339,100%,15%,1) 0px, transparent 50%);
+  background-color: hsla(263, 80%, 5%, 1);
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(244, 70%, 10%, 0.77) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 0%, hsla(189, 100%, 10%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(335, 100%, 15%, 1) 0px, transparent 50%),
+    radial-gradient(at 60% 50%, hsla(340, 100%, 15%, 1) 0px, transparent 50%),
+    radial-gradient(at 90% 0%, hsla(22, 100%, 20%, 0.6) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(240, 50%, 8%, 0.62) 0px, transparent 50%),
+    radial-gradient(at 85% 94%, hsla(339, 100%, 10%, 1) 0px, transparent 50%);
 }
