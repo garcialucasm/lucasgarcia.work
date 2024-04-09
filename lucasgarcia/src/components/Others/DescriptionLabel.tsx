@@ -1,6 +1,6 @@
 function DescriptionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="w-full font-normal">
+    <h3 className="w-full font-normal text-pretty">
       {children}
     </h3>
   )

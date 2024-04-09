@@ -64,13 +64,13 @@ function SelectedCases() {
               reservation system.
             </DescriptionLabel>
             <div className="flex flex-col gap-4 text-sm">
-              <div className="text-nowrap font-semibold uppercase">
+              <div className="font-semibold uppercase">
                 Production Version:{" "}
                 <span className="mx-1 text-nowrap rounded-md bg-amber-100 px-2 py-1 text-xs font-normal text-amber-700">
                   {versionIpcBike}
                 </span>
               </div>
-              <div className="text-nowrap font-semibold">
+              <div className="font-semibold">
                 LINK:{" "}
                 <a
                   href="https://ipcbike.vercel.app/"
@@ -79,7 +79,7 @@ function SelectedCases() {
                   ipcbike.vercel.app
                 </a>
               </div>
-              <div className="text-nowrap font-semibold">
+              <div className="font-semibold">
                 PROJECT OVERVIEW:{" "}
                 <a
                   href="https://ipcbike.vercel.app/web/project"
@@ -89,7 +89,7 @@ function SelectedCases() {
                   ipcbike.vercel.app/web/project
                 </a>
               </div>
-              <div className="text-nowrap font-semibold uppercase">
+              <div className="font-semibold uppercase">
                 {selected} Tech Stack:
               </div>
               <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -115,7 +115,7 @@ function SelectedCases() {
               </div>
             </div>
           </div>
-          <div className="transition-transform duration-500 lg:group-hover:scale-125">
+          <div className="transform-gpu transition-transform duration-300 lg:group-hover:scale-125">
             <Image
               src="/ipc-bike-mockup.png"
               width={720}

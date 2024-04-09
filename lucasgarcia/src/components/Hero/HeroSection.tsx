@@ -2,8 +2,12 @@ import { PiMapPin } from "react-icons/pi"
 
 import AnimatedText from "./modules/AnimatedText"
 import { NavigationPaths } from "@/types/NavigationPaths"
+import { BsChevronCompactDown } from "react-icons/bs"
+import { useEffect, useState } from "react"
 
 function HeroSection() {
+  const [isScrolling, setIsScrolling] = useState(false)
+
   function handleClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     href: string
@@ -17,6 +21,23 @@ function HeroSection() {
     }
   }
 
+  useEffect(() => {
+    function handleScroll() {
+      const position = window.scrollY
+      if (position > 10) {
+        setIsScrolling(true)
+      } else {
+        setIsScrolling(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <>
       <div
@@ -26,11 +47,11 @@ function HeroSection() {
         <div className="min-h-32 text-pretty px-8 text-center text-4xl font-extrabold sm:text-6xl">
           <AnimatedText />
         </div>
-        <div className="relative top-8 flex items-center text-2xl">
+        <div className="relative top-8 flex text-2xl">
           <span className="px-1">
             <PiMapPin />{" "}
           </span>
-          <span className="text-base font-semibold">
+          <span className="flex w-fit text-center text-base font-semibold">
             Currently near Aveiro and Porto, Portugal
           </span>
         </div>
@@ -58,7 +79,15 @@ function HeroSection() {
             </span>
           </button>
         </div>
-        <div className="relative top-28 opacity-80"></div>
+        <div
+          className={`fixed bottom-4 hidden opacity-50 ${!isScrolling && "md:block"}`}
+        >
+          <button
+            onClick={(event) => handleClick(event, NavigationPaths.about)}
+          >
+            <BsChevronCompactDown size={42} />
+          </button>
+        </div>
       </div>
     </>
   )

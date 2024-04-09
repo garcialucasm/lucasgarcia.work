@@ -2,6 +2,7 @@ import TitleLabel from "@/components/Others/TitleLabel"
 import ContainerSections from "@/components/Containers/ContainerSections"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import { ToggleButtonOptions } from "@/types/ToggleButtons"
+import { PiGithubLogoFill, PiLinkedinLogoFill } from "react-icons/pi"
 
 function Contact() {
   const { selected } = useToggleBackFrontContext()
@@ -11,7 +12,7 @@ function Contact() {
         <div className="flex flex-col items-center gap-y-8">
           <TitleLabel>Contact</TitleLabel>
           <div
-            className={`group flex w-full flex-col items-start gap-8 rounded-2xl px-8 pt-8 pb-16 ${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-800" : "bg-white"}`}
+            className={`group flex w-full flex-col items-start gap-8 rounded-2xl px-8 pb-16 pt-8 ${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-800" : "bg-white"}`}
           >
             <p className="w-full">
               Say Hello!{" "}
@@ -19,7 +20,7 @@ function Contact() {
                 👋
               </span>
             </p>
-            <p className="w-full">
+            <p className="w-full text-pretty">
               If you&apos;d like to chat about a project or just have question,
               feel free to reach out and connect with me on{" "}
               <a
@@ -33,7 +34,7 @@ function Contact() {
               <a
                 href={"https://github.com/garcialucasm"}
                 target="_blank"
-                className="border-b-2 border-neutral-700 transition-all duration-300 hover:bg-neutral-700 hover:text-neutral-50"
+                className="border-b-2 border-neutral-500 transition-all duration-300 hover:bg-neutral-500 hover:text-neutral-50"
               >
                 GitHub
               </a>
