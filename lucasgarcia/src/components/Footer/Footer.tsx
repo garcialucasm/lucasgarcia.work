@@ -14,23 +14,11 @@ function Footer() {
     <>
       <footer
         className={`mt-16 flex h-80 w-full flex-col items-center justify-center gap-y-4 bg-gradient-to-t ${selected === ToggleButtonOptions.BACKEND ? "from-neutral-950" : " from-white "} from-60% to-transparent`}
-        id="contact"
       >
         <div className="text-center text-xs">
           &copy; {currentYear} Lucas Garcia. All Rights Reserved.
         </div>
         <div className="flex gap-x-8 text-4xl">
-          <Magnetic>
-            <a
-              href={"https://github.com/garcialucasm"}
-              target="_blank"
-              className="hover:text-slate-950 motion-reduce:transform-none"
-            >
-              <div className="rounded-lg  p-2 hover:border-slate-300 hover:bg-slate-300 hover:bg-opacity-50">
-                <PiGithubLogoFill />
-              </div>
-            </a>
-          </Magnetic>
           <Magnetic>
             <a
               href={"https://www.linkedin.com/in/lucasmgarcia/"}
@@ -39,6 +27,17 @@ function Footer() {
             >
               <div className="rounded-lg  p-2 hover:border-slate-300 hover:bg-slate-300 hover:bg-opacity-70">
                 <PiLinkedinLogoFill />
+              </div>
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a
+              href={"https://github.com/garcialucasm"}
+              target="_blank"
+              className="hover:text-slate-950 motion-reduce:transform-none"
+            >
+              <div className="rounded-lg  p-2 hover:border-slate-300 hover:bg-slate-300 hover:bg-opacity-50">
+                <PiGithubLogoFill />
               </div>
             </a>
           </Magnetic>

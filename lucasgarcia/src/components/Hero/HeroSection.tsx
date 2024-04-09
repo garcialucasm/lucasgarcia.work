@@ -43,7 +43,7 @@ function HeroSection() {
             onClick={(event) => handleClick(event, NavigationPaths.about)}
           >
             <span
-              className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}
+              className={`mx-1 border-b-2 border-neutral-400 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900`}
             >
               about me
             </span>
@@ -54,7 +54,7 @@ function HeroSection() {
             onClick={(event) => handleClick(event, NavigationPaths.cases)}
           >
             <span
-              className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}
+              className={`mx-1 border-b-2 border-neutral-400 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900`}
             >
               my work
             </span>

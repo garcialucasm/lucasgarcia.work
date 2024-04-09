@@ -38,11 +38,11 @@ function SelectedCases() {
               college bicycles for admins, students, and professors through a
               reservation system.
             </DescriptionLabel>
-            <div className="flex gap-4 text-sm">
+            <div className="flex flex-col gap-4 text-sm">
               <div className="text-nowrap font-semibold uppercase">
                 {selected} Tech Stack:
               </div>
-              <div className="flex flex-wrap items-center gap-4 text-sm">
+              <div className="flex flex-wrap items-center gap-2 text-sm">
                 {selected == ToggleButtonOptions.BACKEND ? (
                   <>
                     <StackLabel>Node.js</StackLabel>

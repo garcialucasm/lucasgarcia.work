@@ -15,7 +15,7 @@ const DESCRIPTION_ABOUT_P2 =
 const DESCRIPTION_ABOUT_P3 =
   "I'm naturally curious, resilient, and perpetually working on improvements. Presently, my professional endeavors are centered around web development."
 const DESCRIPTION_ABOUT_P4 =
-  "To know more about my experience, education and skills, feel free to connect with me on LinkedIn. And if you have any questions, feel free to drop me a message."
+  "To know more about my experience, education and skills, please don't hesitate to connect with me on LinkedIn. And if you have any questions, feel free to drop me a message."
 
 function About() {
   const { selected } = useToggleBackFrontContext()
