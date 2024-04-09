@@ -15,17 +15,17 @@ import StackLabel from "@/components/Others/StackLabel"
 function SelectedCases() {
   const { selected } = useToggleBackFrontContext()
   return (
-    <div id="work-section">
+    <div id="work">
       <ContainerSections>
         <TitleLabel>Selected Cases</TitleLabel>
         <ContainerSelectedCases>
-          <div className="flex flex-col gap-4 w-1/2">
+          <div className="flex flex-col gap-4 lg:w-1/2">
             <ImageSmall>
               <Image
                 src="/dk-square.png"
                 width={200}
                 height={200}
-                alt="Picture of the author"
+                alt="Denmark Flag"
               />
             </ImageSmall>
             <div className="flex flex-col gap-y-1">
@@ -65,12 +65,20 @@ function SelectedCases() {
               </div>
             </div>
           </div>
-          <div className="w-1/2 flex">
+          <div className="origin-center transition-transform duration-500 lg:group-hover:scale-125">
             <Image
-              src="/temp-image.png"
-              width={500}
-              height={500}
-              alt="Picture of the author"
+              src="/ipc-bike-mockup.png"
+              width={720}
+              height={496}
+              alt="Mockup IPC Bike"
+              className={`${selected === ToggleButtonOptions.BACKEND && "hidden"}`}
+              />
+            <Image
+              src="/ipc-bike-mockup-backend.png"
+              width={720}
+              height={496}
+              alt="Mockup IPC Bike"
+              className={`${selected === ToggleButtonOptions.FRONTEND && "hidden"}`}
             />
           </div>
         </ContainerSelectedCases>

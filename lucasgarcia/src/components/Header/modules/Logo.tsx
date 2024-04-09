@@ -1,4 +1,4 @@
-import { BsBracesAsterisk } from "react-icons/bs"
+import { FaCode } from "react-icons/fa"
 
 function Logo(props: { isOpenedNavbar: boolean }) {
   const isOpenedNavbar = props.isOpenedNavbar
@@ -6,16 +6,16 @@ function Logo(props: { isOpenedNavbar: boolean }) {
   return (
     <div className="group flex items-center text-[16px] font-semibold">
       <span
-        className={`text-[24px] transition-transform duration-500 ${isOpenedNavbar && "rotate-[360deg]"} text-slate-600 group-hover:-rotate-[360deg] motion-reduce:transform-none`}
+        className={`text-[24px] transition-transform duration-500 ${isOpenedNavbar && "rotate-[360deg]"} group-hover:-rotate-[360deg] motion-reduce:transform-none`}
       >
-        <BsBracesAsterisk />
+        <FaCode />
       </span>
       <div className="relative overflow-hidden">
         <div
-          className={`flex transition-transform duration-500 ease-in-out ${isOpenedNavbar && "-translate-x-[68px]"} group-hover:-translate-x-[68px] motion-reduce:transform-none`}
+          className={`flex transition-transform items-center duration-500 ease-in-out ${isOpenedNavbar && "-translate-x-[68px]"} group-hover:-translate-x-[68px] motion-reduce:transform-none`}
         >
           <span className="px-1">Code by </span>
-          <h1 className="transition-transform duration-500 group-hover:text-cyan-700 motion-reduce:transform-none">
+          <h1 className="transition-transform duration-500 motion-reduce:transform-none">
             Lucas Garcia
           </h1>
         </div>

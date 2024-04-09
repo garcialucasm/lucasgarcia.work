@@ -10,7 +10,7 @@ import ContainerSections from "@/components/Containers/ContainerSections"
 function Stack() {
   const { selected } = useToggleBackFrontContext()
   return (
-    <div id="stack-section">
+    <div id="stack">
       <ContainerSections>
         <TitleLabel>Tech Stack</TitleLabel>
         {selected === ToggleButtonOptions.FRONTEND && <FrontendStack />}

@@ -15,9 +15,9 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
 }) => {
   const { selected, settingToggleBackFront } = useToggleBackFrontContext()
   return (
-    <div className="relative flex w-fit items-center text-slate-500 hover:text-slate-700">
+    <div className="relative flex w-fit items-center">
       <button
-        className={`${TOGGLE_CLASSES} ${selected === optionA && "text-cyan-700"}`}
+        className={`${TOGGLE_CLASSES} ${selected === optionA && "text-purple-700"}`}
         onClick={() => {
           settingToggleBackFront(optionA)
         }}
@@ -30,7 +30,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
         </div>
       </button>
       <button
-        className={`${TOGGLE_CLASSES} ${selected === optionB && "text-cyan-700"}`}
+        className={`${TOGGLE_CLASSES} ${selected === optionB && "text-purple-700"}`}
         onClick={() => {
           settingToggleBackFront(optionB)
         }}
@@ -55,7 +55,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
             stiffness: 250,
             duration: 0.2,
           }}
-          className={`h-full w-1/2 rounded-full border border-cyan-500 bg-gradient-to-b from-slate-50 to-slate-200 shadow-cyan-500 shadow-center-sm`}
+          className={`h-full w-1/2 rounded-full border border-purple-500 bg-gradient-to-b from-slate-50 to-slate-200 shadow-center-sm shadow-purple-500`}
         />
       </div>
     </div>

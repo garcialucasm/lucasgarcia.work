@@ -25,7 +25,7 @@ export default function FrontendStack() {
         </span>
       </CardStack>
       <CardStack stackName="CSS3">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-cyan-500">
+        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-purple-500">
           <FaCss3Alt size={42} />
         </span>
       </CardStack>
@@ -37,7 +37,7 @@ export default function FrontendStack() {
         </>
       </CardStack>
       <CardStack stackName="TypeScript">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-cyan-500">
+        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-blue-500">
           <SiTypescript size={42} />
         </span>
       </CardStack>
@@ -57,7 +57,7 @@ export default function FrontendStack() {
         </span>
       </CardStack>
       <CardStack stackName="Tailwind">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-cyan-500">
+        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-purple-500">
           <SiTailwindcss size={42} />
         </span>
       </CardStack>
@@ -72,7 +72,7 @@ export default function FrontendStack() {
         </span>
       </CardStack>
       <CardStack stackName="Wordpress">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-cyan-600">
+        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-purple-600">
           <FaWordpress size={42} />
         </span>
       </CardStack>

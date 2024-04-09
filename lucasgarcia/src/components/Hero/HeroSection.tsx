@@ -10,7 +10,7 @@ function HeroSection() {
     <>
       <div
         id="hero-section"
-        className="background-mash flex h-svh w-full flex-col items-center justify-center shadow-inner"
+        className="flex h-svh w-full flex-col items-center justify-center shadow-inner"
       >
         <div className="min-h-32 text-pretty px-8 text-center text-4xl font-extrabold sm:text-6xl">
           <AnimatedText />
@@ -26,13 +26,13 @@ function HeroSection() {
         <div className="relative top-16 flex items-start text-sm">
           <span className="">Discover more</span>
           <Link href={NavigationPaths.about}>
-            <span className="mx-1 transform border-b-4 border-cyan-200 border-opacity-40 transition-all duration-200 hover:bg-cyan-200 hover:bg-opacity-40">
+            <span className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}>
               about me
             </span>
           </Link>
           and
           <Link href={NavigationPaths.work}>
-            <span className="mx-1 transform border-b-4 border-cyan-200 border-opacity-40 transition-all duration-200 hover:bg-cyan-200 hover:bg-opacity-40">
+            <span className={`mx-1 border-b-4 border-neutral-400 hover:border-y-4 hover:bg-neutral-400 hover:text-neutral-900`}>
               my work
             </span>
           </Link>
