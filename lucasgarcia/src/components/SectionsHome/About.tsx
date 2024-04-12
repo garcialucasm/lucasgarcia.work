@@ -7,6 +7,7 @@ import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import ContainerSections from "@/components/Containers/ContainerSections"
 import TextLabel from "../Others/TextLabel"
 import ParagraphLabel from "../Others/ParagraphLabel"
+import ContainerSubSections from "../Containers/ContainerSubSections"
 
 const DESCRIPTION_ABOUT_P1 =
   "Hi again! My name is Lucas. I an engineer and web developer."
@@ -24,25 +25,27 @@ function About() {
       <ContainerSections>
         <div className="flex flex-col items-center gap-y-8">
           <TitleLabel>About me</TitleLabel>
-          <div className="flex flex-col items-center justify-center gap-16 lg:flex-row lg:items-start">
-            <div className="flex flex-col lg:w-2/3">
-              <TextLabel>
-                <ParagraphLabel>{DESCRIPTION_ABOUT_P1}</ParagraphLabel>
-                <ParagraphLabel>{DESCRIPTION_ABOUT_P2}</ParagraphLabel>
-                <ParagraphLabel>{DESCRIPTION_ABOUT_P3}</ParagraphLabel>
-                <ParagraphLabel>{DESCRIPTION_ABOUT_P4}</ParagraphLabel>
-              </TextLabel>
+          <ContainerSubSections>
+            <div className="flex flex-col items-center justify-center gap-y-8 gap-x-16 xl:flex-row xl:items-start">
+              <div className="flex flex-col xl:w-2/3">
+                <TextLabel>
+                  <ParagraphLabel>{DESCRIPTION_ABOUT_P1}</ParagraphLabel>
+                  <ParagraphLabel>{DESCRIPTION_ABOUT_P2}</ParagraphLabel>
+                  <ParagraphLabel>{DESCRIPTION_ABOUT_P3}</ParagraphLabel>
+                  <ParagraphLabel>{DESCRIPTION_ABOUT_P4}</ParagraphLabel>
+                </TextLabel>
+              </div>
+              <div className="order-first flex h-64 w-64 overflow-hidden rounded-full border-8 border-white transition-colors group-hover:border-neutral-300 xl:order-none xl:h-fit xl:w-1/3">
+                <Image
+                  src="/profile-picture.jpeg"
+                  width={720}
+                  height={720}
+                  alt="Lucas Profile"
+                  className="transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
             </div>
-            <div className="order-first flex h-64 w-64 overflow-hidden rounded-full border-8 border-white transition-colors group-hover:border-neutral-300 lg:order-none lg:h-fit lg:w-1/3">
-              <Image
-                src="/profile-picture.jpeg"
-                width={720}
-                height={720}
-                alt="Lucas Profile"
-                className="transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-          </div>
+          </ContainerSubSections>
         </div>
       </ContainerSections>
     </div>

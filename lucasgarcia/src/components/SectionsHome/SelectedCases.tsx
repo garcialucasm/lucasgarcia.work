@@ -6,7 +6,7 @@ import { ToggleButtonOptions } from "@/types/ToggleButtons"
 import TitleLabel from "@/components/Others/TitleLabel"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import ContainerSections from "@/components/Containers/ContainerSections"
-import ContainerSelectedCases from "@/components/Containers/ContainerSelectedCases"
+import ContainerSubSections from "@/components/Containers/ContainerSubSections"
 import DescriptionLabel from "@/components/Others/DescriptionLabel"
 import ImageSmall from "@/components/Others/ImageSmall"
 import SubtitleLabel from "@/components/Others/SubtitleLabel"
@@ -43,7 +43,7 @@ function SelectedCases() {
     <div id="cases">
       <ContainerSections>
         <TitleLabel>Selected Cases</TitleLabel>
-        <ContainerSelectedCases>
+        <ContainerSubSections>
           <div className="flex flex-col gap-4 lg:w-1/2">
             <ImageSmall>
               <Image
@@ -131,7 +131,7 @@ function SelectedCases() {
               className={`${selected === ToggleButtonOptions.FRONTEND && "hidden"}`}
             />
           </div>
-        </ContainerSelectedCases>
+        </ContainerSubSections>
       </ContainerSections>
     </div>
   )

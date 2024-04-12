@@ -5,6 +5,7 @@ import { PiGearBold } from "react-icons/pi"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import { ToggleButtonProps } from "@/types/ToggleButtons"
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 const TOGGLE_CLASSES =
   "text-sm font-medium flex items-center gap-2 px-3 xl:pl-3 xl:pr-3.5 py-0 xl:py-1.5 transition-colors relative z-10"
@@ -14,10 +15,28 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
   optionB,
 }) => {
   const { selected, settingToggleBackFront } = useToggleBackFrontContext()
+  const [isScrolling, setIsScrolling] = useState(false)
+
+  useEffect(() => {
+    const pageHeight = document.body.scrollHeight
+    const halfPagePosition = pageHeight / 2
+
+    function handleScroll() {
+      const position = window.scrollY
+      setIsScrolling(position > halfPagePosition)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <div className="relative flex w-fit items-center">
       <button
-        className={`${TOGGLE_CLASSES} ${selected === optionA && "text-blue-700"}`}
+        className={`${TOGGLE_CLASSES} ${selected === optionA && "text-white"}`}
         onClick={() => {
           settingToggleBackFront(optionA)
         }}
@@ -30,7 +49,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
         </div>
       </button>
       <button
-        className={`${TOGGLE_CLASSES} ${selected === optionB && "text-blue-700"}`}
+        className={`${TOGGLE_CLASSES} ${selected === optionB && "text-white"}`}
         onClick={() => {
           settingToggleBackFront(optionB)
         }}
@@ -43,7 +62,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
         </div>
       </button>
       <div
-        className={`absolute inset-0 z-0 flex transition-none ${
+        className={`absolute inset-0 z-0 flex ${
           selected === optionB ? "justify-end" : "justify-start"
         }`}
       >
@@ -53,9 +72,9 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
             type: "tween",
             damping: 15,
             stiffness: 250,
-            duration: 0.2,
+            duration: isScrolling ? 0 : 0.2,
           }}
-          className={`h-full w-1/2 rounded-full border border-blue-500 bg-gradient-to-b from-slate-50 to-slate-200 shadow-center-sm shadow-blue-500`}
+          className={`h-full w-1/2 rounded-full bg-gradient-to-t from-blue-800 via-blue-700 to-blue-800 shadow-center-sm shadow-blue-500`}
         />
       </div>
     </div>

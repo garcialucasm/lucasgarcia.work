@@ -1,6 +1,6 @@
 "use client"
 
-import ContainerContent from "@/components/Containers/ContainerContent"
+import ContainerPage from "@/components/Containers/ContainerPage"
 import HeroSection from "@/components/Hero/HeroSection"
 import Stack from "@/components/SectionsHome/Stack"
 import SelectedCases from "@/components/SectionsHome/SelectedCases"
@@ -11,12 +11,12 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <ContainerContent>
+      <ContainerPage>
         <About />
         <Stack />
         <SelectedCases />
         <Contact />
-      </ContainerContent>
+      </ContainerPage>
     </>
   )
 }

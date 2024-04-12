@@ -13,7 +13,7 @@ function Footer() {
   return (
     <>
       <footer
-        className={`mt-16 flex h-80 w-full flex-col items-center justify-center gap-y-4 bg-gradient-to-t ${selected === ToggleButtonOptions.BACKEND ? "from-neutral-950" : " from-white "} from-60% to-transparent`}
+        className={`mt-16 flex h-80 w-full flex-col items-center justify-center gap-y-4 bg-gradient-to-t ${selected === ToggleButtonOptions.BACKEND ? "from-black" : " from-white "} from-60% to-transparent`}
       >
         <div className="text-center text-xs">
           &copy; {currentYear} Lucas Garcia. All Rights Reserved.
@@ -25,7 +25,9 @@ function Footer() {
               target="_blank"
               className="hover:text-blue-700 motion-reduce:transform-none"
             >
-              <div className="rounded-lg  p-2 hover:border-slate-300 hover:bg-slate-300 hover:bg-opacity-70">
+              <div
+                className={`rounded-lg p-2 transition-all hover:bg-opacity-70 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-700" : "hover:bg-slate-300"}`}
+              >
                 <PiLinkedinLogoFill />
               </div>
             </a>
@@ -36,7 +38,9 @@ function Footer() {
               target="_blank"
               className="hover:text-slate-950 motion-reduce:transform-none"
             >
-              <div className="rounded-lg  p-2 hover:border-slate-300 hover:bg-slate-300 hover:bg-opacity-50">
+              <div
+                className={`rounded-lg p-2 transition-all hover:bg-opacity-50 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-700 hover:text-white" : "hover:bg-slate-300"}`}
+              >
                 <PiGithubLogoFill />
               </div>
             </a>
