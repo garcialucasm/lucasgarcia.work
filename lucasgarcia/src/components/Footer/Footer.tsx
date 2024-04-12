@@ -13,7 +13,8 @@ function Footer() {
   return (
     <>
       <footer
-        className={`mt-16 flex h-80 w-full flex-col items-center justify-center gap-y-4 bg-gradient-to-t ${selected === ToggleButtonOptions.BACKEND ? "from-black" : " from-white "} from-60% to-transparent`}
+        className={`mt-16 flex h-96 w-full flex-col items-center justify-center gap-y-4 bg-gradient-to-t ${selected === ToggleButtonOptions.BACKEND ? "from-black" : " from-white "} from-60% to-transparent`}
+        id="footer"
       >
         <div className="text-center text-xs">
           &copy; {currentYear} Lucas Garcia. All Rights Reserved.

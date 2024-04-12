@@ -22,7 +22,7 @@ function Navbar() {
     href: string
   ) {
     event.preventDefault()
-    const offset = -70 // Adjust this value based on your desired offset
+    const offset = -130 // Adjust this value based on your desired offset
     const target = document.querySelector(href)
     if (target) {
       const y = target.getBoundingClientRect().top + window.scrollY + offset
@@ -167,7 +167,7 @@ function Navbar() {
           </div>
         </div>
         <div
-          className={`fixed bottom-0 flex h-20 w-full bg-opacity-50 backdrop-blur md:hidden ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"} ${isOpenedNavbar && "hidden"}`}`}
+          className={`fixed bottom-0 flex h-20 w-full bg-opacity-50 backdrop-blur md:hidden ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-t-xl" : "bg-white shadow-t-xl"} ${isOpenedNavbar && "hidden"}`}`}
         ></div>
         <div
           className={`fixed bottom-3 left-1/2 -translate-x-[139.5px] md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}

@@ -13,7 +13,7 @@ function HeroSection() {
     href: string
   ) {
     event.preventDefault()
-    const offset = -110 // Adjust this value based on your desired offset
+    const offset = -130 // Adjust this value based on your desired offset
     const target = document.querySelector(href)
     if (target) {
       const y = target.getBoundingClientRect().top + window.scrollY + offset

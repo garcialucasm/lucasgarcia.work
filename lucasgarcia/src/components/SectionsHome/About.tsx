@@ -21,7 +21,7 @@ const DESCRIPTION_ABOUT_P4 =
 function About() {
   const { selected } = useToggleBackFrontContext()
   return (
-    <div className="group" id="about">
+    <div id="about">
       <ContainerSections>
         <div className="flex flex-col items-center gap-y-8">
           <TitleLabel>About me</TitleLabel>
@@ -35,7 +35,7 @@ function About() {
                   <ParagraphLabel>{DESCRIPTION_ABOUT_P4}</ParagraphLabel>
                 </TextLabel>
               </div>
-              <div className="order-first flex h-64 w-64 overflow-hidden rounded-full border-8 border-white transition-colors group-hover:border-neutral-300 xl:order-none xl:h-fit xl:w-1/3">
+              <div className="order-first flex h-64 w-64 overflow-hidden rounded-full  border-white transition-colors group-hover:border-neutral-300 xl:order-none xl:h-fit xl:w-1/3">
                 <Image
                   src="/profile-picture.jpeg"
                   width={720}
