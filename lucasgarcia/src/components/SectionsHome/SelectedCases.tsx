@@ -73,20 +73,20 @@ function SelectedCases() {
               <div className="font-semibold">
                 LINK:{" "}
                 <a
-                  href="https://ipcbike.vercel.app/"
+                  href="https://ipc.bike/"
                   className="text-nowrapp x-2 mx-1 py-1 font-normal text-blue-500 underline"
                 >
-                  ipcbike.vercel.app
+                  ipc.bike
                 </a>
               </div>
               <div className="font-semibold">
                 PROJECT OVERVIEW:{" "}
                 <a
-                  href="https://ipcbike.vercel.app/web/project"
+                  href="https://ipc.bike/web/project"
                   target="_blanc"
                   className="text-nowrapp x-2 mx-1 py-1 font-normal text-blue-500 underline"
                 >
-                  ipcbike.vercel.app/web/project
+                  ipc.bike/web/project
                 </a>
               </div>
               <div className="font-semibold uppercase">
