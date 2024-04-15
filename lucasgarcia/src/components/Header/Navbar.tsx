@@ -93,7 +93,7 @@ function Navbar() {
           className={`${isOpenedNavbar && screenSize < 1280 && `fixed h-screen w-screen overflow-auto bg-opacity-50 backdrop-blur ${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"}`}`}
         ></div>
         <div
-          className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between p-8 transition duration-300 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-900" : "bg-neutral-200"} bg-opacity-75 shadow-xl backdrop-blur`}`}
+          className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between bg-opacity-50 p-8 backdrop-blur-lg transition duration-300 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black outline outline-1 outline-offset-1 outline-black/[.5] shadow-xl" : "bg-white outline outline-1 outline-offset-1 outline-white/[.5] shadow-xl"}`}`}
         >
           <div className="mr-4 flex xl:mr-8">
             <button
@@ -167,7 +167,7 @@ function Navbar() {
           </div>
         </div>
         <div
-          className={`fixed bottom-0 flex h-20 w-full bg-opacity-50 backdrop-blur md:hidden ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-t-xl" : "bg-white shadow-t-xl"} ${isOpenedNavbar && "hidden"}`}`}
+          className={`fixed bottom-0 flex h-20 w-full bg-opacity-50 backdrop-blur md:hidden ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-t-xl outline outline-1 outline-offset-1 outline-black/[.5]" : "bg-white shadow-t-xl outline outline-1 outline-offset-1 outline-white/[.5]"} ${isOpenedNavbar && "hidden"}`}`}
         ></div>
         <div
           className={`fixed bottom-3 left-1/2 -translate-x-[139.5px] md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}
