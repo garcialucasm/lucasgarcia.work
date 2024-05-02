@@ -10,16 +10,18 @@ function AnimatedText() {
       preRenderFirstString={true}
       sequence={[
         // Same substring at the start will only be typed out once, initially
+        "",
+        2000,
         "Hi",
-        1000,
+        2000,
         "Hi, I'm Lucas!",
         2500,
         "Hi, I'm ",
-        1000,
-        "Hi, I'm a web developer",
+        500,
+        "Hi, I'm a developer",
         4000,
         "Hi, I'm ",
-        1000,
+        500,
         "Hi, I'm an engineer",
         2500,
         "",

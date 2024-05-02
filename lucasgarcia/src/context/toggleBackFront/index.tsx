@@ -14,7 +14,7 @@ const ToggleBackFrontProvider = ({
   children: React.ReactNode
 }) => {
   const [selected, setSelected] = useState<ToggleButtonOptions>(
-    ToggleButtonOptions.FRONTEND
+    ToggleButtonOptions.BACKEND
   )
 
   const settingToggleBackFront = (selected: ToggleButtonOptions) => {

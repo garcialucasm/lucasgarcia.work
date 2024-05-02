@@ -26,7 +26,7 @@ function About() {
         <div className="flex flex-col items-center gap-y-8">
           <TitleLabel>About me</TitleLabel>
           <ContainerSubSections>
-            <div className="flex flex-col items-center justify-center gap-y-8 gap-x-16 xl:flex-row xl:items-start">
+            <div className="flex flex-col items-center justify-center gap-x-16 gap-y-8 xl:flex-row xl:items-start">
               <div className="flex flex-col xl:w-2/3">
                 <TextLabel>
                   <ParagraphLabel>{DESCRIPTION_ABOUT_P1}</ParagraphLabel>

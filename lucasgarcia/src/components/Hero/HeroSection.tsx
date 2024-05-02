@@ -4,6 +4,7 @@ import AnimatedText from "./modules/AnimatedText"
 import { NavigationPaths } from "@/types/NavigationPaths"
 import { BsChevronCompactDown } from "react-icons/bs"
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 
 function HeroSection() {
   const [isScrolling, setIsScrolling] = useState(false)
@@ -47,15 +48,25 @@ function HeroSection() {
         <div className="min-h-32 text-pretty px-8 text-center text-4xl font-extrabold sm:text-6xl">
           <AnimatedText />
         </div>
-        <div className="relative top-8 flex text-2xl">
+        <motion.div
+          className="relative top-8 flex text-2xl"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <span className="px-1">
             <PiMapPin />{" "}
           </span>
           <span className="flex w-fit text-center text-base font-semibold">
             Currently near Aveiro and Porto, Portugal
           </span>
-        </div>
-        <div className="relative top-16 flex items-start text-sm">
+        </motion.div>
+        <motion.div
+          className="relative top-16 flex items-start text-sm"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
           <span className="">Discover more</span>
           <button
             title="About"
@@ -78,16 +89,19 @@ function HeroSection() {
               my work
             </span>
           </button>
-        </div>
-        <div
-          className={`fixed bottom-4 hidden opacity-50 ${!isScrolling && "md:block"}`}
+        </motion.div>
+        <motion.div
+          className={`fixed bottom-4 hidden opacity-70 animate-pulse ${!isScrolling && "md:block"}`}
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 2}}
         >
           <button
             onClick={(event) => handleClick(event, NavigationPaths.about)}
           >
             <BsChevronCompactDown size={42} />
           </button>
-        </div>
+        </motion.div>
       </div>
     </>
   )

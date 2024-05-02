@@ -3,73 +3,81 @@
 import { GiGears } from "react-icons/gi"
 import { HiDatabase } from "react-icons/hi"
 import { IoLogoNodejs } from "react-icons/io5"
-import { SiJavascript, SiMocha } from "react-icons/si"
+import { SiExpress, SiJavascript, SiMocha } from "react-icons/si"
 import { SiTypescript } from "react-icons/si"
 import { FaGithub, FaPython } from "react-icons/fa"
 import CardStack from "./CardStack"
 import { BiLogoPostgresql } from "react-icons/bi"
-import ContainerStack from "@/components/Containers/ContainerStack"
-import { ToggleButtonOptions } from "@/types/ToggleButtons"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
+import { useState } from "react"
+import { motion } from "framer-motion"
+
+const stacks = [
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    size: 38,
+    hoverColor: "yellow-400",
+  },
+  { name: "TypeScript", icon: SiTypescript, size: 38, hoverColor: "blue-500" },
+  { name: "Python", icon: FaPython, size: 42, hoverColor: "yellow-400" },
+  { name: "Node.js", icon: IoLogoNodejs, size: 42, hoverColor: "green-500" },
+  { name: "MySQL", icon: HiDatabase, size: 42, hoverColor: "indigo-500" },
+  {
+    name: "PostgreSQL",
+    icon: BiLogoPostgresql,
+    size: 42,
+    hoverColor: "blue-600",
+  },
+  { name: "REST Api", icon: GiGears, size: 38, hoverColor: "teal-500" },
+  { name: "Unit Test", icon: SiMocha, size: 42, hoverColor: "amber-500" },
+  { name: "Express.js", icon: SiExpress, size: 42, hoverColor: null }, // No icon
+  { name: "Git & GitHub", icon: FaGithub, size: 42, hoverColor: null },
+]
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+}
 
 export default function BackendStack() {
   const { selected } = useToggleBackFrontContext()
+  const [stackData] = useState(stacks)
+
   return (
-    <ContainerStack>
-      <CardStack stackName="JavaScript">
-        <>
-          <span className="text-xl transition-all group-hover:scale-150 group-hover:text-yellow-400">
-            <SiJavascript size={38} />
-          </span>
-        </>
-      </CardStack>
-      <CardStack stackName="TypeScript">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-blue-500">
-          <SiTypescript size={38} />
-        </span>
-      </CardStack>
-      <CardStack stackName="Python">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-yellow-400">
-          <FaPython size={42} />
-        </span>
-      </CardStack>
-      <CardStack stackName="Node.js">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-green-500">
-          <IoLogoNodejs size={42} />
-        </span>
-      </CardStack>
-      <CardStack stackName="MySQL">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-indigo-500">
-          <HiDatabase size={42} />
-        </span>
-      </CardStack>
-      <CardStack stackName="PostgreSQL">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-blue-600">
-          <BiLogoPostgresql size={42} />
-        </span>
-      </CardStack>
-      <CardStack stackName="REST Api">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-teal-500">
-          <GiGears size={38} />
-        </span>
-      </CardStack>
-      <CardStack stackName="Unit Test">
-        <span className="text-xl transition-all group-hover:scale-150 group-hover:text-amber-500">
-          <SiMocha size={42} />
-        </span>
-      </CardStack>
-      <CardStack stackName="Express.js">
-        <span className="bg-slate-100 px-0.5 py-1 text-xl text-neutral-950 transition-all group-hover:scale-150 group-hover:bg-rose-500">
-          <span className="p-1 text-xl font-light">ex</span>
-        </span>
-      </CardStack>
-      <CardStack stackName="Git & GitHub">
-        <span
-          className={`text-xl transition-all group-hover:scale-150 ${selected === ToggleButtonOptions.BACKEND ? "group-hover:text-white" : "group-hover:text-black"}`}
-        >
-          <FaGithub size={42} />
-        </span>
-      </CardStack>
-    </ContainerStack>
+    <motion.ul
+      className="container grid grid-cols-1 items-center justify-center gap-8 font-semibold sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+    >
+      {stackData.map((stack) => (
+        <motion.li key={stack.name} className="item" variants={item}>
+          <CardStack stackName={stack.name}>
+            <span
+              className={`text-xl transition-all group-hover:scale-150 group-hover:text-${stack.hoverColor}`}
+            >
+              <stack.icon size={stack.size} />
+            </span>
+          </CardStack>
+        </motion.li>
+      ))}
+    </motion.ul>
   )
 }

@@ -9,6 +9,7 @@ import Button from "@/components/Buttons/Button"
 import ToggleBackFront from "@/components/Buttons/ToggleBackFront"
 import { ToggleButtonOptions } from "@/types/ToggleButtons"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
+import { motion } from "framer-motion"
 
 function Navbar() {
   const { selected } = useToggleBackFrontContext()
@@ -88,12 +89,19 @@ function Navbar() {
 
   return (
     <>
-      <nav id="nav" className="z-40 w-full" role="navigation">
+      <motion.nav
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        id="nav"
+        className="z-40 w-full"
+        role="navigation"
+      >
         <div
           className={`${isOpenedNavbar && screenSize < 1280 && `fixed h-screen w-screen overflow-auto bg-opacity-50 backdrop-blur ${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"}`}`}
         ></div>
         <div
-          className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between bg-opacity-50 p-8 backdrop-blur-lg transition duration-300 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black outline outline-1 outline-offset-1 outline-black/[.5] shadow-xl" : "bg-white outline outline-1 outline-offset-1 outline-white/[.5] shadow-xl"}`}`}
+          className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between bg-opacity-50 p-8 backdrop-blur-lg transition duration-300 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-xl outline outline-1 outline-offset-1 outline-black/[.5]" : "bg-white shadow-xl outline outline-1 outline-offset-1 outline-white/[.5]"}`}`}
         >
           <div className="mr-4 flex xl:mr-8">
             <button
@@ -174,7 +182,7 @@ function Navbar() {
         >
           <ToggleBackFront />
         </div>
-      </nav>
+      </motion.nav>
     </>
   )
 }

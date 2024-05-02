@@ -1,5 +1,4 @@
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
-import { ToggleButtonOptions } from "@/types/ToggleButtons"
 
 interface ContainerSectionsProps {
   children: React.ReactNode

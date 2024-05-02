@@ -13,7 +13,7 @@ function CardStack({
   const { selected } = useToggleBackFrontContext()
   return (
     <div
-      className={`group flex h-24 items-center justify-center gap-x-8 rounded-2xl transition-all lg:hover:scale-110 lg:hover:shadow-xl bg-opacity-60 ${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"}`}
+      className={`group flex h-24 items-center justify-center gap-x-8 rounded-2xl bg-opacity-60 transition-all lg:hover:scale-110 lg:hover:shadow-xl ${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"}`}
       title={stackName}
     >
       {children}
