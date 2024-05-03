@@ -66,7 +66,7 @@ export default function FrontendStack() {
       variants={container}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false }}
+      viewport={{ once: true }}
     >
       {stackData.map((stack) => (
         <motion.li key={stack.name} className="item" variants={item}>
