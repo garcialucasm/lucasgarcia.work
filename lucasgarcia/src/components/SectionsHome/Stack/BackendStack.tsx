@@ -27,12 +27,12 @@ const stacks = [
     name: "PostgreSQL",
     icon: BiLogoPostgresql,
     size: 42,
-    hoverColor: "blue-600",
+    hoverColor: "blue-500",
   },
   { name: "REST Api", icon: GiGears, size: 38, hoverColor: "teal-500" },
-  { name: "Unit Test", icon: SiMocha, size: 42, hoverColor: "amber-500" },
-  { name: "Express.js", icon: SiExpress, size: 42, hoverColor: null }, // No icon
-  { name: "Git & GitHub", icon: FaGithub, size: 42, hoverColor: null },
+  { name: "Unit Test", icon: SiMocha, size: 42, hoverColor: "yellow-600" },
+  { name: "Express.js", icon: SiExpress, size: 42, hoverColor: "white" },
+  { name: "Git & GitHub", icon: FaGithub, size: 42, hoverColor: "white" },
 ]
 
 const container = {

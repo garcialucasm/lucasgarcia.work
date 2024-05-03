@@ -45,7 +45,13 @@ function SelectedCases() {
     { name: "React.js" },
     { name: "Typescript" },
     { name: "Tailwind CSS" },
+    { name: "HTML5" },
+    { name: "CSS3" },
+    { name: "OAuth" },
+    { name: "Axios" },
     { name: "Winston" },
+    { name: "Docker" },
+    { name: "Git & GitHub" },
   ])
   const [stackBackend] = useState([
     { name: "Node.js" },
@@ -54,7 +60,12 @@ function SelectedCases() {
     { name: "Express.js" },
     { name: "Mocha Test" },
     { name: "REST API" },
+    { name: "JWT" },
+    { name: "Ngnix" },
+    { name: "Axios" },
     { name: "Winston" },
+    { name: "Docker" },
+    { name: "Git & GitHub" },
   ])
 
   const [versionIpcBike, setVersionIpcBike] = useState("")
