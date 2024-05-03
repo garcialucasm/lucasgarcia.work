@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 function TitleLabel({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      className="w-full text-3xl font-extrabold uppercase"
+      className="w-full text-2xl font-extrabold uppercase"
       viewport={{ once: true }}
       initial={{ y: 30, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
@@ -13,9 +13,7 @@ function TitleLabel({ children }: { children: React.ReactNode }) {
         ease: [0, 0.71, 0.2, 1.01],
       }}
     >
-      <h2 className="inline-block bg-gradient-to-r from-sky-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
-        {children}
-      </h2>
+      <h2 className="bg-gradient-to-r from-sky-600 via-blue-600 to-blue-600 inline-block text-transparent bg-clip-text">{children}</h2>
     </motion.div>
   )
 }

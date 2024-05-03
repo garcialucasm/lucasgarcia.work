@@ -36,6 +36,10 @@ const config: Config = {
         "inner-top-dark": "0px 1px 2px 2px inset black",
         "inner-bottom-light": "rgba(0, 0, 0, 0.5) 0px -1px 2px 2px inset",
         "inner-bottom-dark": "0px -1px 2px 2px inset black",
+        "inner-only-bottom-light": "rgba(0, 0, 0, 0.5) 0px -120px 70px -70px inset",
+        "inner-only-bottom-dark": "rgba(0, 0, 0, 1) 0px -150px 70px -70px inset",
+        "inner-center-light": "rgba(0, 0, 0, 0.5) 0px 0px 2px 2px inset",
+        "inner-center-dark": "0px 0px 2px 2px inset black",
       },
       screens: {
         xxs: "360px",

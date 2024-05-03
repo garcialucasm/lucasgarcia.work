@@ -11,7 +11,7 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
   const { selected } = useToggleBackFrontContext()
   return (
     <div
-      className={`flex w-fit rounded-full border border-white border-opacity-10 bg-opacity-20 backdrop-blur p-2 ${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-800 shadow-inner-bottom-dark md:shadow-inner-top-dark" : "bg-white shadow-inner-bottom-light md:shadow-inner-top-light"}`}
+      className={`flex w-fit rounded-full border border-white border-opacity-10 bg-opacity-5 p-2 ${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-inner-bottom-dark md:shadow-inner-top-dark" : "bg-black shadow-inner-bottom-light md:shadow-inner-top-light"}`}
     >
       <SliderToggle optionA={optionA} optionB={optionB} />
     </div>

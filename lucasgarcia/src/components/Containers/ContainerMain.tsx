@@ -11,7 +11,7 @@ function ContainerMain({ children }: Props) {
   const { selected } = useToggleBackFrontContext()
   return (
     <main
-      className={`flex min-h-screen w-full flex-col items-center justify-center ${selected === ToggleButtonOptions.BACKEND ? "background-mash-dark text-neutral-200" : "background-mash"}`}
+      className={`flex min-h-screen w-full flex-col items-center justify-center ${selected === ToggleButtonOptions.BACKEND ? "background-mash-dark text-neutral-200" : "background-mash-light"}`}
     >
       {children}
     </main>

@@ -9,13 +9,14 @@ function ContainerSubSections({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
       viewport={{ once: true }}
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ y: 30, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{
         duration: 0.8,
+        delay: 0.8,
         ease: [0, 0.71, 0.2, 1.01],
       }}
-      className={`group flex w-full flex-col items-center gap-8 rounded-2xl p-8 transition-shadow duration-500 hover:shadow-center-xl lg:flex-row lg:items-start lg:p-16 ${selected === ToggleButtonOptions.BACKEND ? "bg-black bg-opacity-30" : "bg-white bg-opacity-60"}`}
+      className={`group flex w-full flex-col items-center gap-8 rounded-2xl border border-neutral-500 border-opacity-10 p-8 shadow-lg lg:flex-row lg:items-start lg:p-16 ${selected === ToggleButtonOptions.BACKEND ? "shadow-black" : "bg-white bg-opacity-20"}`}
     >
       {children}
     </motion.div>

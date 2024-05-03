@@ -9,35 +9,72 @@ import ContainerSections from "@/components/Containers/ContainerSections"
 import ContainerSubSections from "@/components/Containers/ContainerSubSections"
 import DescriptionLabel from "@/components/Others/DescriptionLabel"
 import ImageSmall from "@/components/Others/ImageSmall"
-import SubtitleLabel from "@/components/Others/SubtitleLabel"
+import SubtitleLabel from "@/components/Others/SubtitleCasesLabel"
 import StackLabel from "@/components/Others/StackLabel"
-// import { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import TitleCasesLabel from "../Others/TitleCasesLabel"
 
-// const repoOwner = "garcialucasm"
-// const repoName = "ipc-bike-app"
-let versionIpcBike = "Alpha 0.0.3"
+const repoOwner = "garcialucasm"
+const repoName = "ipc-bike-app"
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const item = {
+  hidden: { y: 10, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+}
 
 function SelectedCases() {
   const { selected } = useToggleBackFrontContext()
+  const [stacksFrontend] = useState([
+    { name: "Next.js" },
+    { name: "React.js" },
+    { name: "Typescript" },
+    { name: "Tailwind CSS" },
+    { name: "Winston" },
+  ])
+  const [stackBackend] = useState([
+    { name: "Node.js" },
+    { name: "Typescript" },
+    { name: "PostgreSQL" },
+    { name: "Express.js" },
+    { name: "Mocha Test" },
+    { name: "REST API" },
+    { name: "Winston" },
+  ])
 
-  // const [versionIpcBike, setVersionIpcBike] = useState(null)
+  const [versionIpcBike, setVersionIpcBike] = useState("")
 
-  // useEffect(() => {
-  //   const fetchVersion = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`,
-  //         { cache: "no-store" }
-  //       )
-  //       const data = await response.json()
-  //       setVersionIpcBike(data.tag_name)
-  //     } catch (error) {
-  //       console.error("Error fetching latest version of IPC Bike:", error)
-  //     }
-  //   }
+  useEffect(() => {
+    const fetchVersion = async () => {
+      fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/tags`, {
+        cache: "no-store",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setVersionIpcBike(data[0]["name"])
+        })
+        .catch((error) => {
+          console.error("Error fetching latest version of IPC Bike:", error)
+        })
+    }
 
-  //   fetchVersion()
-  // }, [])
+    fetchVersion()
+  }, [])
 
   return (
     <div id="cases">
@@ -54,7 +91,7 @@ function SelectedCases() {
               />
             </ImageSmall>
             <div className="flex flex-col gap-y-1">
-              <TitleLabel>{`IPC Bike`}</TitleLabel>
+              <TitleCasesLabel>{`IPC Bike`}</TitleCasesLabel>
               <SubtitleLabel>Web App Booking System</SubtitleLabel>
             </div>
             <DescriptionLabel>
@@ -67,7 +104,14 @@ function SelectedCases() {
               <div className="font-semibold uppercase">
                 Production Version:{" "}
                 <span className="mx-1 text-nowrap rounded-md bg-amber-100 px-2 py-1 text-xs font-normal text-amber-700">
-                  {versionIpcBike}
+                  {versionIpcBike && versionIpcBike.includes("v0.0.")
+                    ? "Alpha "
+                    : versionIpcBike && versionIpcBike.includes("v0.")
+                      ? "Beta "
+                      : ""}
+                  {versionIpcBike && versionIpcBike
+                    ? versionIpcBike && versionIpcBike
+                    : "Please, check on github"}
                 </span>
               </div>
               <div className="font-semibold">
@@ -92,27 +136,46 @@ function SelectedCases() {
               <div className="font-semibold uppercase">
                 {selected} Tech Stack:
               </div>
-              <div className="flex flex-wrap items-center gap-2 text-sm">
-                {selected == ToggleButtonOptions.BACKEND ? (
-                  <>
-                    <StackLabel>Node.js</StackLabel>
-                    <StackLabel>Typescript</StackLabel>
-                    <StackLabel>PostgreSQL</StackLabel>
-                    <StackLabel>Express.js</StackLabel>
-                    <StackLabel>Mocha Test</StackLabel>
-                    <StackLabel>REST API</StackLabel>
-                    <StackLabel>Winston</StackLabel>
-                  </>
-                ) : (
-                  <>
-                    <StackLabel>Next.js</StackLabel>
-                    <StackLabel>React.js</StackLabel>
-                    <StackLabel>Typescript</StackLabel>
-                    <StackLabel>Tailwind CSS</StackLabel>
-                    <StackLabel>Winston</StackLabel>
-                  </>
-                )}
-              </div>
+              {selected === ToggleButtonOptions.BACKEND && (
+                <motion.ul
+                  className="flex flex-wrap items-center gap-2 text-sm"
+                  variants={container}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  {stackBackend.map((stacks) => (
+                    <motion.li
+                      key={stacks.name}
+                      className="item"
+                      variants={item}
+                    >
+                      {" "}
+                      <StackLabel>{stacks.name}</StackLabel>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              )}
+              {selected === ToggleButtonOptions.FRONTEND && (
+                <motion.ul
+                  className="flex flex-wrap items-center gap-2 text-sm"
+                  variants={container}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  {stacksFrontend.map((stack) => (
+                    <motion.li
+                      key={stack.name}
+                      className="item"
+                      variants={item}
+                    >
+                      {" "}
+                      <StackLabel>{stack.name}</StackLabel>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              )}
             </div>
           </div>
           <div className="transform-gpu transition-transform duration-300 lg:group-hover:scale-125">

@@ -5,9 +5,12 @@ import { NavigationPaths } from "@/types/NavigationPaths"
 import { BsChevronCompactDown } from "react-icons/bs"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
+import { useToggleBackFrontContext } from "@/context/toggleBackFront"
+import { ToggleButtonOptions } from "@/types/ToggleButtons"
 
 function HeroSection() {
   const [isScrolling, setIsScrolling] = useState(false)
+  const { selected } = useToggleBackFrontContext()
 
   function handleClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -43,7 +46,7 @@ function HeroSection() {
     <>
       <div
         id="home"
-        className="flex h-svh w-full flex-col items-center justify-center shadow-inner"
+        className={`mb-24 flex h-svh w-full flex-col items-center justify-center shadow-xl ${selected === ToggleButtonOptions.BACKEND ? "background-mash-noise-dark text-neutral-200 shadow-black" : "background-mash-noise-light shadow-neutral-500"}`}
       >
         <div className="min-h-32 text-pretty px-8 text-center text-4xl font-extrabold sm:text-6xl">
           <AnimatedText />
@@ -58,7 +61,7 @@ function HeroSection() {
             <PiMapPin />{" "}
           </span>
           <span className="flex w-fit text-center text-base font-semibold">
-            Currently near Aveiro and Porto, Portugal
+            Currently near Porto and Aveiro, Portugal
           </span>
         </motion.div>
         <motion.div
@@ -73,7 +76,7 @@ function HeroSection() {
             onClick={(event) => handleClick(event, NavigationPaths.about)}
           >
             <span
-              className={`mx-1 border-b-2 border-neutral-400 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900`}
+              className={`mx-1 border-b-2 transition-all duration-300 ${selected === ToggleButtonOptions.BACKEND ? "border-neutral-600 hover:bg-neutral-600 hover:text-white" : " border-neutral-200 hover:bg-neutral-200"}`}
             >
               about me
             </span>
@@ -84,17 +87,17 @@ function HeroSection() {
             onClick={(event) => handleClick(event, NavigationPaths.cases)}
           >
             <span
-              className={`mx-1 border-b-2 border-neutral-400 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900`}
+              className={`mx-1 border-b-2 transition-all duration-300 ${selected === ToggleButtonOptions.BACKEND ? "border-neutral-600 hover:bg-neutral-600 hover:text-white" : " border-neutral-200 hover:bg-neutral-200"}`}
             >
               my work
             </span>
           </button>
         </motion.div>
         <motion.div
-          className={`fixed bottom-4 hidden opacity-70 animate-pulse ${!isScrolling && "md:block"}`}
+          className={`fixed bottom-4 hidden animate-pulse opacity-70 ${!isScrolling && "md:block"}`}
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 2}}
+          transition={{ duration: 1, delay: 2 }}
         >
           <button
             onClick={(event) => handleClick(event, NavigationPaths.about)}

@@ -74,7 +74,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
             stiffness: 250,
             duration: isScrolling ? 0 : 0.2,
           }}
-          className={`h-full w-1/2 rounded-full bg-gradient-to-t from-blue-800 via-blue-700 to-blue-800 shadow-center-sm shadow-blue-500`}
+          className={`h-full w-1/2 rounded-full border-1 border-blue-900 border-opacity-10 bg-gradient-to-r from-sky-700 via-indigo-700 to-violet-700 shadow-center-sm shadow-blue-500`}
         />
       </div>
     </div>

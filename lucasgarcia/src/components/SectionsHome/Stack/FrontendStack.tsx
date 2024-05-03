@@ -15,7 +15,7 @@ import { BsBootstrap } from "react-icons/bs"
 import { DiJavascript } from "react-icons/di"
 import { TiZoom } from "react-icons/ti"
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { delay, motion } from "framer-motion"
 
 const stacks = [
   { name: "HTML5", icon: FaHtml5, size: 42, hoverColor: "orange-500" },
