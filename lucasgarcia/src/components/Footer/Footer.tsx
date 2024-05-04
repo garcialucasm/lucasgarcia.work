@@ -27,7 +27,7 @@ function Footer() {
               aria-label="Linkedin"
             >
               <div
-                className={`rounded-lg p-2 transition-all hover:bg-opacity-30 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-700" : "hover:bg-slate-300"}`}
+                className={`rounded-lg hover:border hover:border-neutral-500 hover:border-opacity-25 p-2 transition-all hover:bg-opacity-30 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-700" : "hover:bg-slate-300"}`}
               >
                 <PiLinkedinLogoFill />
               </div>
@@ -41,7 +41,7 @@ function Footer() {
               aria-label="GitHub"
             >
               <div
-                className={`rounded-lg p-2 transition-all hover:bg-opacity-30 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-700 hover:text-white" : "hover:bg-slate-300"}`}
+                className={`rounded-lg hover:border hover:border-neutral-500 hover:border-opacity-25 p-2 transition-all hover:bg-opacity-30 ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-700 hover:text-white" : "hover:bg-slate-300"}`}
               >
                 <PiGithubLogoFill />
               </div>
