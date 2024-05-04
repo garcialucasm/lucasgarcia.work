@@ -40,6 +40,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
         onClick={() => {
           settingToggleBackFront(optionA)
         }}
+        aria-label="Toggle to frontend"
       >
         <div className="flex items-center gap-x-2 p-2 font-bold">
           <FaReact
@@ -53,6 +54,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
         onClick={() => {
           settingToggleBackFront(optionB)
         }}
+        aria-label="Toggle to Backend"
       >
         <div className="flex items-center gap-x-2 p-2 font-bold">
           <PiGearBold
@@ -74,7 +76,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
             stiffness: 250,
             duration: isScrolling ? 0 : 0.2,
           }}
-          className={`h-full w-1/2 rounded-full border-1 border-blue-900 border-opacity-10 bg-gradient-to-r from-sky-700 via-indigo-700 to-violet-700 shadow-center-sm shadow-blue-500`}
+          className={`border-1 h-full w-1/2 rounded-full border-blue-900 border-opacity-10 bg-gradient-to-r from-sky-700 via-indigo-700 to-violet-700 shadow-center-sm shadow-blue-500`}
         />
       </div>
     </div>

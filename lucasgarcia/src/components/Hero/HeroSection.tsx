@@ -100,6 +100,7 @@ function HeroSection() {
           transition={{ duration: 1, delay: 2 }}
         >
           <button
+          title="Scroll down"
             onClick={(event) => handleClick(event, NavigationPaths.about)}
           >
             <BsChevronCompactDown size={42} />

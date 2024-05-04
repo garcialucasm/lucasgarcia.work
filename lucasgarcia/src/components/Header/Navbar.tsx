@@ -114,6 +114,7 @@ function Navbar() {
             <Button
               onClick={toggleMenuNavbar}
               className={`absolute right-8 transition duration-300 ${isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
+              aria-label="Open Menu"
             >
               <PiListBold size={28}>
                 <title>Menu</title>
@@ -122,6 +123,7 @@ function Navbar() {
             <Button
               onClick={toggleMenuNavbar}
               className={`absolute right-8 transition duration-300 ${!isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
+              aria-label="Close Menu"
             >
               <PiXBold size={28}>
                 <title>Menu</title>
@@ -136,41 +138,53 @@ function Navbar() {
               id="ulMenu"
               className={`my-12 flex transform flex-col items-center justify-center rounded-3xl px-4 py-4 text-center shadow-xl xl:mx-0 xl:my-0 xl:flex-row xl:items-center xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none ${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-900" : "bg-white"}`}
             >
-              <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
-                title="Home"
-                onClick={(event) => handleClick(event, NavigationPaths.home)}
-              >
-                <li>Home</li>
-              </button>
-              <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
-                title="About"
-                onClick={(event) => handleClick(event, NavigationPaths.about)}
-              >
-                <li>About</li>
-              </button>
-              <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
-                title="Tech Stack"
-                onClick={(event) => handleClick(event, NavigationPaths.stack)}
-              >
-                <li>Stack</li>
-              </button>
-              <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
-                title="Cases"
-                onClick={(event) => handleClick(event, NavigationPaths.cases)}
-              >
-                <li>Cases</li>
-              </button>
-              <button
-                className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
-                title="Contact"
-                onClick={(event) => handleClick(event, NavigationPaths.contact)}
-              >
-                <li>Contact</li>
-              </button>
+              <li>
+                <button
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  title="Home"
+                  onClick={(event) => handleClick(event, NavigationPaths.home)}
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  title="About"
+                  onClick={(event) => handleClick(event, NavigationPaths.about)}
+                >
+                  About
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  title="Tech Stack"
+                  onClick={(event) => handleClick(event, NavigationPaths.stack)}
+                >
+                  Stack
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  title="Cases"
+                  onClick={(event) => handleClick(event, NavigationPaths.cases)}
+                >
+                  Cases
+                </button>
+              </li>
+              <li>
+                <button
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  title="Contact"
+                  onClick={(event) =>
+                    handleClick(event, NavigationPaths.contact)
+                  }
+                >
+                  Contact
+                </button>
+              </li>
             </ul>
           </div>
         </div>
