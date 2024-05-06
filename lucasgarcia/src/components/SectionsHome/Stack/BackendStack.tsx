@@ -17,22 +17,22 @@ const stacks = [
     name: "JavaScript",
     icon: SiJavascript,
     size: 38,
-    hoverColor: "yellow-400",
+    hoverColor: "group-hover:text-yellow-400",
   },
-  { name: "TypeScript", icon: SiTypescript, size: 38, hoverColor: "blue-500" },
-  { name: "Python", icon: FaPython, size: 42, hoverColor: "yellow-400" },
-  { name: "Node.js", icon: IoLogoNodejs, size: 42, hoverColor: "green-500" },
-  { name: "MySQL", icon: HiDatabase, size: 42, hoverColor: "indigo-500" },
+  { name: "TypeScript", icon: SiTypescript, size: 38, hoverColor: "group-hover:text-blue-500" },
+  { name: "Python", icon: FaPython, size: 42, hoverColor: "group-hover:text-yellow-400" },
+  { name: "Node.js", icon: IoLogoNodejs, size: 42, hoverColor: "group-hover:text-green-500" },
+  { name: "MySQL", icon: HiDatabase, size: 42, hoverColor: "group-hover:text-indigo-500" },
   {
     name: "PostgreSQL",
     icon: BiLogoPostgresql,
     size: 42,
-    hoverColor: "blue-500",
+    hoverColor: "group-hover:text-blue-500",
   },
-  { name: "REST Api", icon: GiGears, size: 38, hoverColor: "teal-500" },
-  { name: "Unit Test", icon: SiMocha, size: 42, hoverColor: "yellow-600" },
-  { name: "Express.js", icon: SiExpress, size: 42, hoverColor: "white" },
-  { name: "Git & GitHub", icon: FaGithub, size: 42, hoverColor: "white" },
+  { name: "REST Api", icon: GiGears, size: 38, hoverColor: "group-hover:text-teal-500" },
+  { name: "Unit Test", icon: SiMocha, size: 42, hoverColor: "group-hover:text-yellow-600" },
+  { name: "Express.js", icon: SiExpress, size: 42, hoverColor: "group-hover:text-white" },
+  { name: "Git & GitHub", icon: FaGithub, size: 42, hoverColor: "group-hover:text-white" },
 ]
 
 const container = {
@@ -71,7 +71,7 @@ export default function BackendStack() {
         <motion.li key={stack.name} className="item" variants={item}>
           <CardStack stackName={stack.name}>
             <span
-              className={`text-xl transition-all group-hover:scale-150 group-hover:text-${stack.hoverColor}`}
+              className={`text-xl transition-all group-hover:scale-150 ${stack.hoverColor}`}
             >
               <stack.icon size={stack.size} />
             </span>

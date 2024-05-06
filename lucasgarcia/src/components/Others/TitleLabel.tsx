@@ -13,7 +13,7 @@ function TitleLabel({ children }: { children: React.ReactNode }) {
         ease: [0, 0.71, 0.2, 1.01],
       }}
     >
-      <h2 className="inline-block bg-gradient-to-r from-sky-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+      <h2 className="inline-block bg-gradient-to-r from-sky-600 via-pink-600 to-rose-500 bg-clip-text text-transparent">
         {children}
       </h2>
     </motion.div>
