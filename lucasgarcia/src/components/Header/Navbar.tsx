@@ -117,7 +117,7 @@ function Navbar() {
               className={`absolute right-8 transition duration-300 hover:text-blue-500 ${isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
               aria-label="Open Menu"
             >
-              <PiHamburgerBold size={32}>
+              <PiHamburgerBold size={36}>
                 <title>Menu</title>
               </PiHamburgerBold>
             </Button>
@@ -126,7 +126,7 @@ function Navbar() {
               className={`absolute right-8 transition duration-300 hover:text-blue-500 ${!isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
               aria-label="Close Menu"
             >
-              <PiXBold size={32}>
+              <PiXBold size={36}>
                 <title>Menu</title>
               </PiXBold>
             </Button>
