@@ -4,8 +4,8 @@ import { FaReact } from "react-icons/fa"
 import { PiGearBold } from "react-icons/pi"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import { ToggleButtonProps } from "@/types/ToggleButtons"
-import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import { useFramerMotion } from "@/context/framerMotion"
 
 const TOGGLE_CLASSES =
   "text-sm font-medium flex items-center gap-2 px-3 xl:pl-3 xl:pr-3.5 py-0 xl:py-1.5 transition-colors relative z-10"
@@ -14,6 +14,7 @@ export const SliderToggle: React.FC<ToggleButtonProps> = ({
   optionA,
   optionB,
 }) => {
+  const { motion } = useFramerMotion()
   const { selected, settingToggleBackFront } = useToggleBackFrontContext()
   const [isScrolling, setIsScrolling] = useState(false)
 

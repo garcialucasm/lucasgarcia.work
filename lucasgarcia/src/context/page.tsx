@@ -1,5 +1,10 @@
+import { FramerMotionProvider } from "./framerMotion"
 import { ToggleBackFrontProvider } from "./toggleBackFront"
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  return <ToggleBackFrontProvider>{children}</ToggleBackFrontProvider>
+  return (
+    <FramerMotionProvider>
+      <ToggleBackFrontProvider>{children}</ToggleBackFrontProvider>
+    </FramerMotionProvider>
+  )
 }

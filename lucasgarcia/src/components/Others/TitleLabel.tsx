@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
-
+import { useFramerMotion } from "@/context/framerMotion"
 function TitleLabel({ children }: { children: React.ReactNode }) {
+  const { motion } = useFramerMotion()
   return (
     <motion.div
       className="w-full text-3xl font-extrabold uppercase"

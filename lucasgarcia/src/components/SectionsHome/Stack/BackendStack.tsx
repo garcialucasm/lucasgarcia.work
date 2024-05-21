@@ -10,7 +10,7 @@ import CardStack from "./CardStack"
 import { BiLogoPostgresql } from "react-icons/bi"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { useFramerMotion } from "@/context/framerMotion"
 
 const stacks = [
   {
@@ -19,20 +19,60 @@ const stacks = [
     size: 38,
     hoverColor: "group-hover:text-yellow-400",
   },
-  { name: "TypeScript", icon: SiTypescript, size: 38, hoverColor: "group-hover:text-blue-500" },
-  { name: "Python", icon: FaPython, size: 42, hoverColor: "group-hover:text-yellow-400" },
-  { name: "Node.js", icon: IoLogoNodejs, size: 42, hoverColor: "group-hover:text-green-500" },
-  { name: "MySQL", icon: HiDatabase, size: 42, hoverColor: "group-hover:text-indigo-500" },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    size: 38,
+    hoverColor: "group-hover:text-blue-500",
+  },
+  {
+    name: "Python",
+    icon: FaPython,
+    size: 42,
+    hoverColor: "group-hover:text-yellow-400",
+  },
+  {
+    name: "Node.js",
+    icon: IoLogoNodejs,
+    size: 42,
+    hoverColor: "group-hover:text-green-500",
+  },
+  {
+    name: "MySQL",
+    icon: HiDatabase,
+    size: 42,
+    hoverColor: "group-hover:text-indigo-500",
+  },
   {
     name: "PostgreSQL",
     icon: BiLogoPostgresql,
     size: 42,
     hoverColor: "group-hover:text-blue-500",
   },
-  { name: "REST Api", icon: GiGears, size: 38, hoverColor: "group-hover:text-teal-500" },
-  { name: "Unit Test", icon: SiMocha, size: 42, hoverColor: "group-hover:text-yellow-600" },
-  { name: "Express.js", icon: SiExpress, size: 42, hoverColor: "group-hover:text-white" },
-  { name: "Git & GitHub", icon: FaGithub, size: 42, hoverColor: "group-hover:text-white" },
+  {
+    name: "REST Api",
+    icon: GiGears,
+    size: 38,
+    hoverColor: "group-hover:text-teal-500",
+  },
+  {
+    name: "Unit Test",
+    icon: SiMocha,
+    size: 42,
+    hoverColor: "group-hover:text-yellow-600",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    size: 42,
+    hoverColor: "group-hover:text-white",
+  },
+  {
+    name: "Git & GitHub",
+    icon: FaGithub,
+    size: 42,
+    hoverColor: "group-hover:text-white",
+  },
 ]
 
 const container = {
@@ -56,6 +96,7 @@ const item = {
 }
 
 export default function BackendStack() {
+  const { motion } = useFramerMotion()
   const { selected } = useToggleBackFrontContext()
   const [stackData] = useState(stacks)
 

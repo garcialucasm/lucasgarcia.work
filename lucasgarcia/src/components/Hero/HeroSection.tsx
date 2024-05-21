@@ -4,11 +4,12 @@ import AnimatedText from "./modules/AnimatedText"
 import { NavigationPaths } from "@/types/NavigationPaths"
 import { BsChevronCompactDown } from "react-icons/bs"
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import { ToggleButtonOptions } from "@/types/ToggleButtons"
+import { useFramerMotion } from "@/context/framerMotion"
 
 function HeroSection() {
+  const { motion } = useFramerMotion()
   const [isScrolling, setIsScrolling] = useState(false)
   const { selected } = useToggleBackFrontContext()
 
@@ -94,13 +95,13 @@ function HeroSection() {
           </button>
         </motion.div>
         <motion.div
-          className={`fixed bottom-4 hidden animate-pulse opacity-70 ${!isScrolling && "md:block"}`}
+          className={`fixed bottom-4 hidden animate-pulse opacity-70 ${!isScrolling && "lg:block"}`}
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
           <button
-          title="Scroll down"
+            title="Scroll down"
             onClick={(event) => handleClick(event, NavigationPaths.about)}
           >
             <BsChevronCompactDown size={42} />

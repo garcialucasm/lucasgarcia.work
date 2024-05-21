@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { PiListBold, PiXBold } from "react-icons/pi"
+import { PiHamburgerBold, PiXBold } from "react-icons/pi"
 
 import { NavigationPaths } from "@/types/NavigationPaths"
 import Logo from "./modules/Logo"
@@ -9,9 +9,10 @@ import Button from "@/components/Buttons/Button"
 import ToggleBackFront from "@/components/Buttons/ToggleBackFront"
 import { ToggleButtonOptions } from "@/types/ToggleButtons"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
-import { motion } from "framer-motion"
+import { useFramerMotion } from "@/context/framerMotion"
 
 function Navbar() {
+  const { motion } = useFramerMotion()
   const { selected } = useToggleBackFrontContext()
   const navbarMenuRef = useRef(null)
   const [isOpenedNavbar, setIsOpenedNavbar] = useState(false)
@@ -98,10 +99,10 @@ function Navbar() {
         role="navigation"
       >
         <div
-          className={`${isOpenedNavbar && screenSize < 1280 && `fixed h-screen w-screen overflow-auto bg-opacity-50 backdrop-blur ${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"}`}`}
+          className={`${isOpenedNavbar && `fixed h-screen w-screen overflow-auto bg-opacity-50 backdrop-blur ${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"}`}`}
         ></div>
         <div
-          className={`xl:flex-no-wrap fixed flex h-24 w-full flex-wrap items-center justify-between bg-opacity-40 p-8 transition duration-300 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-xl outline outline-1 outline-offset-1 outline-black/[.5] backdrop-blur-lg" : "bg-white shadow-xl outline outline-1 outline-offset-1 outline-white/[.5] backdrop-blur-lg"}`}`}
+          className={`fixed flex h-24 w-full flex-wrap items-center justify-between bg-opacity-40 p-8 transition duration-300 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-xl outline outline-1 outline-offset-1 outline-black/[.5] backdrop-blur-lg" : "bg-white shadow-xl outline outline-1 outline-offset-1 outline-white/[.5] backdrop-blur-lg"}`}`}
         >
           <div className="mr-4 flex xl:mr-8">
             <button
@@ -110,37 +111,37 @@ function Navbar() {
               <Logo isOpenedNavbar={isOpenedNavbar} />
             </button>
           </div>
-          <div className="flex items-center xl:hidden">
+          <div className="flex items-center">
             <Button
               onClick={toggleMenuNavbar}
-              className={`absolute right-8 transition duration-300 ${isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
+              className={`absolute right-8 transition duration-300 hover:text-blue-500 ${isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
               aria-label="Open Menu"
             >
-              <PiListBold size={28}>
+              <PiHamburgerBold size={32}>
                 <title>Menu</title>
-              </PiListBold>
+              </PiHamburgerBold>
             </Button>
             <Button
               onClick={toggleMenuNavbar}
-              className={`absolute right-8 transition duration-300 ${!isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
+              className={`absolute right-8 transition duration-300 hover:text-blue-500 ${!isOpenedNavbar ? "scale-0 opacity-0" : "scale-100 opacity-100"} flex items-center`}
               aria-label="Close Menu"
             >
-              <PiXBold size={28}>
+              <PiXBold size={32}>
                 <title>Menu</title>
               </PiXBold>
             </Button>
           </div>
           <div
             id="menu"
-            className={`${isOpenedNavbar ? "origin-top-right scale-100 opacity-100" : "origin-top-right scale-0 opacity-0"} h-0 w-full transition xl:flex xl:w-fit xl:scale-100 xl:items-center xl:opacity-100 xl:transition-none ${screenSize === 1279 && "transition-none"}`}
+            className={`${isOpenedNavbar ? "origin-top-right scale-100 opacity-100" : "origin-top-right scale-0 opacity-0"} h-0 w-full transition`}
           >
             <ul
               id="ulMenu"
-              className={`my-12 flex transform flex-col items-center justify-center rounded-3xl px-4 py-4 text-center shadow-xl xl:mx-0 xl:my-0 xl:flex-row xl:items-center xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none ${selected === ToggleButtonOptions.BACKEND ? "bg-neutral-900" : "bg-white"}`}
+              className={`my-12 flex transform flex-col items-center justify-center rounded-3xl px-4 py-4 text-center shadow-xl bg-opacity-80 ${selected === ToggleButtonOptions.BACKEND ? "bg-black" : "bg-white"}`}
             >
               <li>
                 <button
-                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all motion-reduce:transform-none hover:text-blue-500`}
                   title="Home"
                   onClick={(event) => handleClick(event, NavigationPaths.home)}
                 >
@@ -149,7 +150,7 @@ function Navbar() {
               </li>
               <li>
                 <button
-                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all motion-reduce:transform-none hover:text-blue-500`}
                   title="About"
                   onClick={(event) => handleClick(event, NavigationPaths.about)}
                 >
@@ -158,7 +159,7 @@ function Navbar() {
               </li>
               <li>
                 <button
-                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all motion-reduce:transform-none hover:text-blue-500`}
                   title="Tech Stack"
                   onClick={(event) => handleClick(event, NavigationPaths.stack)}
                 >
@@ -167,7 +168,7 @@ function Navbar() {
               </li>
               <li>
                 <button
-                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all motion-reduce:transform-none hover:text-blue-500`}
                   title="Cases"
                   onClick={(event) => handleClick(event, NavigationPaths.cases)}
                 >
@@ -176,7 +177,7 @@ function Navbar() {
               </li>
               <li>
                 <button
-                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all hover:translate-y-[-3px] motion-reduce:transform-none xl:p-4 xl:hover:bg-transparent ${selected === ToggleButtonOptions.BACKEND ? "hover:bg-neutral-800 hover:text-blue-500" : "hover:bg-neutral-200 hover:text-blue-700"}`}
+                  className={`block w-full transform rounded-3xl p-4 font-semibold underline-offset-4 transition-all motion-reduce:transform-none hover:text-blue-500`}
                   title="Contact"
                   onClick={(event) =>
                     handleClick(event, NavigationPaths.contact)
@@ -189,10 +190,10 @@ function Navbar() {
           </div>
         </div>
         <div
-          className={`fixed bottom-0 flex h-20 w-full bg-opacity-50 md:hidden ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-t-xl outline outline-1 outline-offset-1 outline-black/[.5] backdrop-blur" : "bg-white shadow-t-xl outline outline-1 outline-offset-1 outline-white/[.5] backdrop-blur"} ${isOpenedNavbar && "hidden"}`}`}
+          className={`fixed bottom-0 flex h-20 w-full bg-opacity-50 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-t-xl outline outline-1 outline-offset-1 outline-black/[.5] backdrop-blur" : "bg-white shadow-t-xl outline outline-1 outline-offset-1 outline-white/[.5] backdrop-blur"} ${isOpenedNavbar && "hidden"}`}`}
         ></div>
         <div
-          className={`fixed bottom-3 left-1/2 -translate-x-[139.5px] md:bottom-auto md:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}
+          className={`fixed bottom-3 left-1/2 -translate-x-[139.5px] lg:bottom-auto lg:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}
         >
           <ToggleBackFront />
         </div>

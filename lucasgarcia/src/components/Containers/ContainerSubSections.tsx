@@ -2,9 +2,10 @@
 
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import { ToggleButtonOptions } from "@/types/ToggleButtons"
-import { motion } from "framer-motion"
+import { useFramerMotion } from "@/context/framerMotion"
 
 function ContainerSubSections({ children }: { children: React.ReactNode }) {
+  const { motion } = useFramerMotion()
   const { selected } = useToggleBackFrontContext()
   return (
     <motion.div

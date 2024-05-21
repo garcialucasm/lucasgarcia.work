@@ -15,7 +15,7 @@ import { BsBootstrap } from "react-icons/bs"
 import { DiJavascript } from "react-icons/di"
 import { TiZoom } from "react-icons/ti"
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { useFramerMotion } from "@/context/framerMotion"
 
 const stacks = [
   { name: "HTML5", icon: FaHtml5, size: 42, hoverColor: "group-hover:text-orange-500" },
@@ -58,15 +58,16 @@ const item = {
 }
 
 export default function FrontendStack() {
+  const { motion } = useFramerMotion()
   const [stackData] = useState(stacks)
-
+  
   return (
     <motion.ul
-      className="container grid grid-cols-1 items-center justify-center gap-8 font-semibold sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-      variants={container}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+    className="container grid grid-cols-1 items-center justify-center gap-8 font-semibold sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    variants={container}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
     >
       {stackData.map((stack) => (
         <motion.li key={stack.name} className="item" variants={item}>

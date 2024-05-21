@@ -12,11 +12,11 @@ import ImageSmall from "@/components/Others/ImageSmall"
 import SubtitleLabel from "@/components/Others/SubtitleCasesLabel"
 import StackLabel from "@/components/Others/StackLabel"
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
 import TitleCasesLabel from "../Others/TitleCasesLabel"
+import { useFramerMotion } from "@/context/framerMotion"
 
-const repoOwner = "garcialucasm"
-const repoName = "ipc-bike-app"
+const REPO_OWNER = "garcialucasm"
+const REPO_NAME = "ipc-bike-app"
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -39,6 +39,7 @@ const item = {
 }
 
 function SelectedCases() {
+  const { motion } = useFramerMotion()
   const { selected } = useToggleBackFrontContext()
   const [stacksFrontend] = useState([
     { name: "Next.js" },
@@ -72,7 +73,7 @@ function SelectedCases() {
 
   useEffect(() => {
     const fetchVersion = async () => {
-      fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/tags`, {
+      fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/tags`, {
         cache: "no-store",
       })
         .then((response) => response.json())
