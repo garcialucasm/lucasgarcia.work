@@ -16,6 +16,7 @@ function Navbar() {
   const { selected } = useToggleBackFrontContext()
   const navbarMenuRef = useRef(null)
   const [isOpenedNavbar, setIsOpenedNavbar] = useState(false)
+  const [isOpenedLogo, setIsOpenedLogo] = useState(true)
   const [screenSize, setScreenSize] = useState(0)
   const [isScrolling, setIsScrolling] = useState(false)
 
@@ -37,6 +38,7 @@ function Navbar() {
 
   function toggleMenuNavbar() {
     setIsOpenedNavbar(!isOpenedNavbar)
+    setIsOpenedLogo(!isOpenedLogo)
   }
 
   useEffect(() => {
@@ -76,8 +78,10 @@ function Navbar() {
       const position = window.scrollY
       if (position > 100) {
         setIsScrolling(true)
+        setIsOpenedLogo(false)
       } else {
         setIsScrolling(false)
+        setIsOpenedLogo(true)
       }
     }
 
@@ -108,7 +112,7 @@ function Navbar() {
             <button
               onClick={(event) => handleClick(event, NavigationPaths.home)}
             >
-              <Logo isOpenedNavbar={isOpenedNavbar} />
+              <Logo isOpenedLogo={isOpenedLogo} isScrolling={isScrolling} />
             </button>
           </div>
           <div className="flex items-center">
@@ -190,7 +194,7 @@ function Navbar() {
           </div>
         </div>
         <div
-          className={`fixed bottom-0 flex h-20 w-full bg-opacity-50 ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-t-xl outline outline-1 outline-offset-1 outline-black/[.5] backdrop-blur" : "bg-white shadow-t-xl outline outline-1 outline-offset-1 outline-white/[.5] backdrop-blur"} ${isOpenedNavbar && "hidden"}`}`}
+          className={`fixed bottom-0 flex lg:hidden h-20 w-full bg-opacity-50 ${isOpenedNavbar && "hidden"} ${(isScrolling || isOpenedNavbar) && `${selected === ToggleButtonOptions.BACKEND ? "bg-black shadow-t-xl outline outline-1 outline-offset-1 outline-black/[.5] backdrop-blur" : "bg-white shadow-t-xl outline outline-1 outline-offset-1 outline-white/[.5] backdrop-blur"}`}`}
         ></div>
         <div
           className={`fixed bottom-3 left-1/2 -translate-x-[139.5px] lg:bottom-auto lg:top-[21.2px] xl:top-[15.5px] ${isOpenedNavbar && "scale-0 opacity-0"} `}
