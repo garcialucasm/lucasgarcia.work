@@ -3,11 +3,20 @@
 import { GiGears } from "react-icons/gi"
 import { HiDatabase } from "react-icons/hi"
 import { IoLogoNodejs } from "react-icons/io5"
-import { SiExpress, SiJavascript, SiMocha } from "react-icons/si"
-import { SiTypescript } from "react-icons/si"
+import {
+  SiExpress,
+  SiJavascript,
+  SiLinux,
+  SiDocker,
+  SiSwagger,
+  SiTypescript,
+  SiSqlite,
+} from "react-icons/si"
 import { FaGithub, FaPython } from "react-icons/fa"
 import CardStack from "./CardStack"
 import { BiLogoPostgresql } from "react-icons/bi"
+import { BiLogoMongodb } from "react-icons/bi"
+import { GrTest } from "react-icons/gr"
 import { useToggleBackFrontContext } from "@/context/toggleBackFront"
 import { useState } from "react"
 import { useFramerMotion } from "@/context/framerMotion"
@@ -50,22 +59,70 @@ const stacks = [
     hoverColor: "group-hover:text-blue-500",
   },
   {
+    name: "SQLite",
+    icon: SiSqlite,
+    size: 42,
+    hoverColor: "group-hover:text-blue-500",
+  },
+  {
+    name: "MongoDB",
+    icon: BiLogoMongodb,
+    size: 42,
+    hoverColor: "group-hover:text-green-500",
+  },
+  {
+    name: "Unit Test",
+    icon: GrTest,
+    size: 38,
+    hoverColor: "group-hover:text-yellow-500",
+  },
+  {
+    name: "Integration Test",
+    icon: GrTest,
+    size: 38,
+    hoverColor: "group-hover:text-blue-500",
+  },
+  {
+    name: "Load Test",
+    icon: GrTest,
+    size: 38,
+    hoverColor: "group-hover:text-green-600",
+  },
+  {
+    name: "E2E Test",
+    icon: GrTest,
+    size: 38,
+    hoverColor: "group-hover:text-pink-500",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    size: 42,
+    hoverColor: "group-hover:text-red-300",
+  },
+  {
     name: "REST Api",
     icon: GiGears,
     size: 38,
     hoverColor: "group-hover:text-teal-500",
   },
   {
-    name: "Unit Test",
-    icon: SiMocha,
+    name: "Swagger",
+    icon: SiSwagger,
     size: 42,
-    hoverColor: "group-hover:text-yellow-600",
+    hoverColor: "group-hover:text-green-500",
   },
   {
-    name: "Express.js",
-    icon: SiExpress,
+    name: "Docker",
+    icon: SiDocker,
     size: 42,
-    hoverColor: "group-hover:text-white",
+    hoverColor: "group-hover:text-blue-600",
+  },
+  {
+    name: "Linux",
+    icon: SiLinux,
+    size: 42,
+    hoverColor: "group-hover:text-yellow-400",
   },
   {
     name: "Git & GitHub",
