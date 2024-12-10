@@ -165,7 +165,7 @@ export default function FrontendStack() {
       {stackData.map((stack) => (
         <motion.li key={stack.name} className="item" variants={item}>
           <CardStack stackName={stack.name}>
-            <span className={`text-xl transition-all group-hover:scale-150`}>
+            <span className={`text-xl transition-all group-hover:scale-125 sm:group-hover:scale-150`}>
               <stack.icon size={stack.size} className={`${stack.hoverColor}`} />
             </span>
           </CardStack>

@@ -169,7 +169,7 @@ export default function BackendStack() {
         <motion.li key={stack.name} className="item" variants={item}>
           <CardStack stackName={stack.name}>
             <span
-              className={`text-xl transition-all group-hover:scale-150 ${stack.hoverColor}`}
+              className={`text-xl transition-all group-hover:scale-125 sm:group-hover:scale-150 ${stack.hoverColor}`}
             >
               <stack.icon size={stack.size} />
             </span>
