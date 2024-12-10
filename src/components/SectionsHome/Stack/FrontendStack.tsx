@@ -156,7 +156,7 @@ export default function FrontendStack() {
 
   return (
     <motion.ul
-      className="grid grid-cols-1 items-center justify-center gap-8 font-semibold sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      className="grid grid-cols-2 items-center justify-center gap-4 sm:gap-8 font-semibold lg:grid-cols-3 xl:grid-cols-4"
       variants={container}
       initial="hidden"
       whileInView="visible"

@@ -71,27 +71,27 @@ const stacks = [
     hoverColor: "group-hover:text-green-500",
   },
   {
-    name: "Unit Test",
+    name: "Unit Tests",
     icon: GrTest,
-    size: 38,
+    size: 36,
     hoverColor: "group-hover:text-yellow-500",
   },
   {
-    name: "Integration Test",
+    name: "Integr. Tests",
     icon: GrTest,
-    size: 38,
+    size: 36,
     hoverColor: "group-hover:text-blue-500",
   },
   {
-    name: "Load Test",
+    name: "Load Tests",
     icon: GrTest,
-    size: 38,
+    size: 36,
     hoverColor: "group-hover:text-green-600",
   },
   {
-    name: "E2E Test",
+    name: "E2E Tests",
     icon: GrTest,
-    size: 38,
+    size: 36,
     hoverColor: "group-hover:text-pink-500",
   },
   {
@@ -159,7 +159,7 @@ export default function BackendStack() {
 
   return (
     <motion.ul
-      className="grid grid-cols-1 items-center justify-center gap-8 font-semibold sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      className="grid grid-cols-2 items-center justify-center gap-4 sm:gap-8 font-semibold lg:grid-cols-3 xl:grid-cols-4"
       variants={container}
       initial="hidden"
       whileInView="visible"
