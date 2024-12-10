@@ -1,23 +1,43 @@
 "use client"
 
 import { GiGears } from "react-icons/gi"
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si"
-import { SiTypescript } from "react-icons/si"
+import {
+  SiNextdotjs,
+  SiStorybook,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si"
 import CardStack from "./CardStack"
 import {
+  FaAngular,
   FaCss3Alt,
   FaGithub,
   FaHtml5,
   FaReact,
   FaWordpress,
 } from "react-icons/fa"
+import { TbBrandCypress } from "react-icons/tb"
+import { FaTheaterMasks } from "react-icons/fa"
 import { BsBootstrap } from "react-icons/bs"
+import { GrTest } from "react-icons/gr"
 import { DiJavascript } from "react-icons/di"
-import { TiZoom } from "react-icons/ti"
+import { TbSettingsSearch } from "react-icons/tb"
 import { useState } from "react"
 import { useFramerMotion } from "@/context/framerMotion"
 
 const stacks = [
+  {
+    name: "JavaScript",
+    icon: DiJavascript,
+    size: 42,
+    hoverColor: "group-hover:text-yellow-500",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    size: 42,
+    hoverColor: "group-hover:text-blue-500",
+  },
   {
     name: "HTML5",
     icon: FaHtml5,
@@ -31,16 +51,10 @@ const stacks = [
     hoverColor: "group-hover:text-sky-500",
   },
   {
-    name: "JavaScript",
-    icon: DiJavascript,
+    name: "Angular",
+    icon: FaAngular,
     size: 42,
-    hoverColor: "group-hover:text-yellow-500",
-  },
-  {
-    name: "TypeScript",
-    icon: SiTypescript,
-    size: 42,
-    hoverColor: "group-hover:text-blue-500",
+    hoverColor: "group-hover:text-red-600",
   },
   {
     name: "React.js",
@@ -74,7 +88,7 @@ const stacks = [
   },
   {
     name: "SEO",
-    icon: TiZoom,
+    icon: TbSettingsSearch,
     size: 42,
     hoverColor: "group-hover:text-green-500",
   },
@@ -83,6 +97,30 @@ const stacks = [
     icon: FaWordpress,
     size: 42,
     hoverColor: "group-hover:text-sky-800",
+  },
+  {
+    name: "E2E Test",
+    icon: GrTest,
+    size: 42,
+    hoverColor: "group-hover:text-pink-700",
+  },
+  {
+    name: "Playwright",
+    icon: FaTheaterMasks,
+    size: 42,
+    hoverColor: "group-hover:text-green-700",
+  },
+  {
+    name: "Cypress",
+    icon: TbBrandCypress,
+    size: 42,
+    hoverColor: "group-hover:text-cyan-700",
+  },
+  {
+    name: "Storybook",
+    icon: SiStorybook,
+    size: 42,
+    hoverColor: "group-hover:text-pink-700",
   },
   {
     name: "Git & GitHub",
